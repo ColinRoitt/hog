@@ -212,20 +212,22 @@ export function WhereIsKazakhstanGameView({
                 .join(", ")}
             </p>
             <ul className="score-list">
-              {Object.entries(round.distancesKm || {}).map(([playerId, distanceKm]) => {
-                const playerName =
-                  roomState.room.players.find((player) => player.id === playerId)?.name || "Unknown";
-                const isWinner = (round.winners || []).includes(playerId);
-                return (
-                  <li key={playerId}>
-                    <span>
-                      {playerName}
-                      {isWinner ? " (point)" : ""}
-                    </span>
-                    <strong>{distanceKm.toFixed(2)} km</strong>
-                  </li>
-                );
-              })}
+              {Object.entries(round.distancesKm || {})
+                .sort(([, distA], [, distB]) => distA - distB)
+                .map(([playerId, distanceKm]) => {
+                  const playerName =
+                    roomState.room.players.find((player) => player.id === playerId)?.name || "Unknown";
+                  const isWinner = (round.winners || []).includes(playerId);
+                  return (
+                    <li key={playerId}>
+                      <span>
+                        {playerName}
+                        {isWinner ? " (point)" : ""}
+                      </span>
+                      <strong>{distanceKm.toFixed(2)} km</strong>
+                    </li>
+                  );
+                })}
             </ul>
             <button type="button" onClick={onNextMapRound} disabled={!isHost}>
               {isHost
