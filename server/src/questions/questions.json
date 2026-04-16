@@ -1,34 +1,114 @@
 [
   {
-    "question": "What is the national animal of Scotland?",
-    "answer": "Unicorn"
+    "question": "How many countries are in the G20?",
+    "answer": "19"
   },
   {
-    "question": "What is the only mammal capable of true flight?",
-    "answer": "Bat"
+    "question": "Why is a converted aircraft hangar in the remote Canadian town Churchill, Manitoba, a dangerous place to work?",
+    "answer": "It is a prison for polar bears"
   },
   {
-    "question": "Which planet in our solar system rotates on its side?",
-    "answer": "Uranus"
+    "question": "What was the original name of the band Coldplay?",
+    "answer": "Starfish"
   },
   {
-    "question": "What is the largest organ in the human body?",
-    "answer": "Skin"
+    "question": "What enviable property is possessed by the small translucent jellyfish known to science as Turritopsis dohrnii?",
+    "answer": "Immortality"
   },
   {
-    "question": "What is the capital city of Australia?",
-    "answer": "Canberra"
+    "question": "What was the name of the Bank of America before it took on its current name in 1930?",
+    "answer": "The Bank of Italy"
   },
   {
-    "question": "Which metal is liquid at room temperature?",
-    "answer": "Mercury"
+    "question": "In 2017, what was the most requested specialist subject by contestants applying to be on the quiz show Mastermind?",
+    "answer": "Harry Potter"
   },
   {
-    "question": "How many sides does a heptagon have?",
-    "answer": "Seven"
+    "question": "Before he decided on Catch-22, what title did Joseph Heller propose for his iconic novel?",
+    "answer": "Catch-18"
   },
   {
-    "question": "What is the fastest land animal?",
-    "answer": "Cheetah"
+    "question": "What seven-word phrase is believed to make up the last words of Elvis Presley?",
+    "answer": "'I'm going to the bathroom to read'"
+  },
+  {
+    "question": "By what name is the much loved children's book character Mr Bump known in Norway?",
+    "answer": "Herr Dumpidump"
+  },
+  {
+    "question": "Which major organisation has the motto Blood and Fire?",
+    "answer": "The Salvation Army"
+  },
+  {
+    "question": "In the years following 1952, a number of Scottish post-boxes were destroyed in protest against what?",
+    "answer": "Because they had the letters 'E II R' on them"
+  },
+  {
+    "question": "What's the meaning of the name of Namibia, the African country?",
+    "answer": "'Area where there is nothing'"
+  },
+  {
+    "question": "The English puritan politician Praise-God Barebones had a son called Nicholas. But what was Nicholas's middle name?",
+    "answer": "If-Christ-Had-Not-Died-For-Thee-Thou-Hadst-Been-Damned"
+  },
+  {
+    "question": "After a tank burst at a distilling company in Boston in 1919, 21 people were killed by a flood of what?",
+    "answer": "Molasses"
+  },
+  {
+    "question": "What is the name of the king penguin who lives at Edinburgh Zoo, who is also a Colonel-in-Chief of the Norwegian King's Guard?",
+    "answer": "Brigadier Sir Nils Olav"
+  },
+  {
+    "question": "After winning his Nobel Prize, Niels Bohr was given a house that had a built-in pipeline to supply him with free what?",
+    "answer": "Beer"
+  },
+  {
+    "question": "What did Robert Louis Stevenson bequeath to a fifteen-year-old named Anne Ide when he had no use for it himself?",
+    "answer": "His birthday"
+  },
+  {
+    "question": "Before his Vatican stint, Pope Francis's former employers include a nightclub. What was his job?",
+    "answer": "Bouncer"
+  },
+  {
+    "question": "How did Virginia Woolf describe James Joyce's novel Ulysses?",
+    "answer": "'A queasy undergraduate scratching his pimples'"
+  },
+  {
+    "question": "At Ramsbottom's annual World Black Pudding Throwing Championship, players hurl their black puddings at what?",
+    "answer": "Yorkshire puddings"
+  },
+  {
+    "question": "What is the official motto of the Thames Valley Police?",
+    "answer": "Let There Be Peace in the Thames Valley"
+  },
+  {
+    "question": "In July 2003, what was presented to Roger Federer from the organisers of the Swiss Open for winning his first Wimbledon title?",
+    "answer": "A cow"
+  },
+  {
+    "question": "In 2017, owing to the colour of its large claw, a newly discovered species of shrimp was named after which band?",
+    "answer": "Pink Floyd"
+  },
+  {
+    "question": "What was Queen Victoria's first name?",
+    "answer": "Alexandrina"
+  },
+  {
+    "question": "Why did the Russian Olympic shooting team arrive 12 days late for the London 1908 Olympic Games?",
+    "answer": "They were using the Julian Calendar"
+  },
+  {
+    "question": "In 2018, archaeologists discovered the only known example of what Roman artefact at a fort on Hadrian's Wall?",
+    "answer": "Boxing gloves"
+  },
+  {
+    "question": "What is the scientific name for the Western Lowland Gorilla?",
+    "answer": "Gorilla gorilla"
+  },
+  {
+    "question": "What was particularly unusual about Jack the Signalman, who worked at a Cape Town train station in the late nineteenth century?",
+    "answer": "He was a baboon"
   }
 ]
