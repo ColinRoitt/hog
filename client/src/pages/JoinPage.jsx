@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function JoinPage({ initialName, initialRoom, onJoin, error }) {
   const [playerName, setPlayerName] = useState(initialName);
@@ -8,6 +8,15 @@ export function JoinPage({ initialName, initialRoom, onJoin, error }) {
     event.preventDefault();
     onJoin({ playerName, roomName });
   }
+
+  // on page load if urlparam set of roomname then auto populate this field
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const room = urlParams.get("room");
+    if (room) {
+      setRoomName(room);
+    }
+  }, []);
 
   return (
     <main className="shell">
@@ -24,7 +33,7 @@ export function JoinPage({ initialName, initialRoom, onJoin, error }) {
             <input
               value={playerName}
               onChange={(event) => setPlayerName(event.target.value)}
-              placeholder="Colin"
+              placeholder="sqwerkl"
               maxLength={24}
             />
           </label>
@@ -34,7 +43,7 @@ export function JoinPage({ initialName, initialRoom, onJoin, error }) {
             <input
               value={roomName}
               onChange={(event) => setRoomName(event.target.value)}
-              placeholder="thursday-night"
+              placeholder="rob"
               maxLength={24}
             />
           </label>
