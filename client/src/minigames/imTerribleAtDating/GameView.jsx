@@ -85,15 +85,14 @@ export function ImTerribleAtDatingGameView({
           <h2>When did it happen?</h2>
           <p className="question">{round.question}</p>
           <p className="subtle">
-            Enter the calendar year (digits only). Use the <strong>AD / BC</strong> toggle for dates before year 1 —
-            BC is stored as a negative number (e.g. 551 BC → <strong>-551</strong>).
+            Enter the calendar year - toggle between AD and BC.
           </p>
         </div>
 
         {game.phase === GAME_PHASES.COLLECTING_FAKE_ANSWERS ? (
           <form className="panel stack" onSubmit={handleSubmit}>
             <h2>Your guess</h2>
-            <p className="subtle">Enter the year, then tap AD or BC (BC is sent as a negative number).</p>
+            <p className="subtle">Enter the year, then tap AD or BC.</p>
             <div className="dating-year-inline">
               <input
                 id="dating-year"
@@ -131,10 +130,10 @@ export function ImTerribleAtDatingGameView({
             </div>
             {previewSigned !== null ? (
               <p className="subtle">
-                You will submit: <strong>{previewSigned}</strong> ({formatHistoricalYear(previewSigned)})
+                You will submit: <strong>{formatHistoricalYear(previewSigned)}</strong>
               </p>
             ) : (
-              <p className="subtle">Enter a year to see the signed value sent to the server.</p>
+              <p className="subtle">Enter a year</p>
             )}
             <button type="submit" disabled={round.hasSubmittedGuess || previewSigned === null}>
               {round.hasSubmittedGuess ? "Submitted" : "Lock in guess"}

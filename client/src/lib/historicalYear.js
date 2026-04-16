@@ -11,7 +11,7 @@ export function formatHistoricalYear(signedYear) {
     return `${Math.abs(signedYear).toLocaleString("en-GB")} BC`;
   }
 
-  return `${signedYear.toLocaleString("en-GB")} AD`;
+  return `${signedYear.toLocaleString("en-GB")} AD`.replaceAll(',', '');
 }
 
 /**
