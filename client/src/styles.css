@@ -102,6 +102,12 @@ p {
   gap: 1rem;
 }
 
+.dating-bc-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
 .field {
   display: grid;
   gap: 0.45rem;

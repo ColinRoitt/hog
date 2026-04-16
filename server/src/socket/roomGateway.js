@@ -118,6 +118,7 @@ export function createRoomGateway({ wss, roomStore, minigameRegistry }) {
         message.type === CLIENT_EVENTS.SUBMIT_FAKE_ANSWER ||
         message.type === CLIENT_EVENTS.SUBMIT_GUESS ||
         message.type === CLIENT_EVENTS.SUBMIT_DISTINCTLY_AVERAGE_GUESS ||
+        message.type === CLIENT_EVENTS.SUBMIT_IM_TERRIBLE_AT_DATING_GUESS ||
         message.type === CLIENT_EVENTS.SUBMIT_MAP_GUESS ||
         message.type === CLIENT_EVENTS.NEXT_MAP_REVEAL_STEP ||
         message.type === CLIENT_EVENTS.NEXT_MAP_ROUND ||

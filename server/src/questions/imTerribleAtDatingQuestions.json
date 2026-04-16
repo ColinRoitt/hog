@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Abraham Lincoln is assassinated",
+    "answer": 1865
+  },
+  {
+    "question": "Geoffrey Chaucer dies",
+    "answer": 1400
+  },
+  {
+    "question": "Richard Strauss composes his retrospective piece Vier letzte Lieder",
+    "answer": 1948
+  },
+  {
+    "question": "A monarch of England succeeds his or her grandparent for the last time (as we type this now)",
+    "answer": 1760
+  },
+  {
+    "question": "First untethered human flight in a hot-air balloon",
+    "answer": 1783
+  },
+  {
+    "question": "The first Rugby World Cup is played",
+    "answer": 1987
+  },
+  {
+    "question": "Isaac Newton publishes his laws of motion",
+    "answer": 1687
+  },
+  {
+    "question": "Confucius is born",
+    "answer": -551
+  },
+  {
+    "question": "Dinosaurs are made extinct (estimate necessarily rounded to the nearest million years)",
+    "answer": -66000000
+  },
+  {
+    "question": "Tchaikovsky's 1812 Overture is first performed",
+    "answer": 1882
+  }
+]

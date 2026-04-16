@@ -81,6 +81,14 @@ export function connectToRoom({ playerName, roomName, sessionId, onRoomState, on
         }),
       );
     },
+    submitImTerribleAtDatingGuess(guess) {
+      socket.send(
+        JSON.stringify({
+          type: CLIENT_EVENTS.SUBMIT_IM_TERRIBLE_AT_DATING_GUESS,
+          payload: { guess },
+        }),
+      );
+    },
     submitMapGuess({ lat, lon }) {
       socket.send(
         JSON.stringify({

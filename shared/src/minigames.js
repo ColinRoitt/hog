@@ -12,6 +12,12 @@ export const MINIGAME_DEFINITIONS = [
     description: "Teams answer numerical questions. Closest team average wins the point.",
   },
   {
+    type: GAME_TYPE.IM_TERRIBLE_AT_DATING,
+    name: "I'm Terrible at Dating",
+    description:
+      "Guess when each event happened. Closest year wins the point (BC answers are negative numbers).",
+  },
+  {
     type: GAME_TYPE.WHERE_IS_KAZAKHSTAN,
     name: "Where is Kazakhstan?",
     description: "Drop a pin on the map. Closest guess wins the point (ties within 10% of best).",

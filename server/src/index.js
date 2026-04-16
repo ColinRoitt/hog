@@ -6,6 +6,7 @@ import express from "express";
 import { WebSocketServer } from "ws";
 import { createAndTheAnswerIsntMinigame } from "./game/andTheAnswerIsnt.js";
 import { createDistinctlyAverageMinigame } from "./game/distinctlyAverage.js";
+import { createImTerribleAtDatingMinigame } from "./game/imTerribleAtDating.js";
 import { createWhereIsKazakhstanMinigame } from "./game/whereIsKazakhstan.js";
 import { createMinigameRegistry } from "./game/minigameRegistry.js";
 import { createRoomStore } from "./rooms/roomStore.js";
@@ -25,6 +26,12 @@ const distinctlyAverageQuestionsPath = path.join(
 const distinctlyAverageQuestions = JSON.parse(
   fs.readFileSync(distinctlyAverageQuestionsPath, "utf8"),
 );
+const imTerribleAtDatingQuestionsPath = path.join(
+  __dirname,
+  "questions",
+  "imTerribleAtDatingQuestions.json",
+);
+const imTerribleAtDatingQuestions = JSON.parse(fs.readFileSync(imTerribleAtDatingQuestionsPath, "utf8"));
 const whereIsKazakhstanQuestionsPath = path.join(
   __dirname,
   "questions",
@@ -57,6 +64,7 @@ const wss = new WebSocketServer({ server });
 const minigameRegistry = createMinigameRegistry([
   createAndTheAnswerIsntMinigame({ questions }),
   createDistinctlyAverageMinigame({ questions: distinctlyAverageQuestions }),
+  createImTerribleAtDatingMinigame({ questions: imTerribleAtDatingQuestions }),
   createWhereIsKazakhstanMinigame({ questions: whereIsKazakhstanQuestions }),
 ]);
 const roomStore = createRoomStore({ minigameRegistry });

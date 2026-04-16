@@ -115,6 +115,9 @@ export default function App() {
         onSubmitDistinctlyAverageGuess={(guess) =>
           connectionRef.current?.submitDistinctlyAverageGuess(guess)
         }
+        onSubmitImTerribleAtDatingGuess={(guess) =>
+          connectionRef.current?.submitImTerribleAtDatingGuess(guess)
+        }
         onSubmitMapGuess={(guess) => connectionRef.current?.submitMapGuess(guess)}
         onNextMapRevealStep={() => connectionRef.current?.nextMapRevealStep()}
         onNextMapRound={() => connectionRef.current?.nextMapRound()}
