@@ -16,8 +16,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = Number(process.env.PORT || 3001);
 
-const questionsPath = path.join(__dirname, "questions", "questions.json");
-const questions = JSON.parse(fs.readFileSync(questionsPath, "utf8"));
+const andTheAnswerIsntQuestionsPath = path.join(__dirname, "questions", "andTheAnswerIsntQuestions.json");
+const andTheAnswerIsntQuestionsQuestions = JSON.parse(fs.readFileSync(andTheAnswerIsntQuestionsPath, "utf8"));
 const distinctlyAverageQuestionsPath = path.join(
   __dirname,
   "questions",
@@ -62,7 +62,7 @@ const server = app.listen(PORT, () => {
 
 const wss = new WebSocketServer({ server });
 const minigameRegistry = createMinigameRegistry([
-  createAndTheAnswerIsntMinigame({ questions }),
+  createAndTheAnswerIsntMinigame({ questions: andTheAnswerIsntQuestionsQuestions }),
   createDistinctlyAverageMinigame({ questions: distinctlyAverageQuestions }),
   createImTerribleAtDatingMinigame({ questions: imTerribleAtDatingQuestions }),
   createWhereIsKazakhstanMinigame({ questions: whereIsKazakhstanQuestions }),
