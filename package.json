@@ -10,7 +10,9 @@
   "scripts": {
     "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
     "build": "npm run build --workspace client",
-    "start": "npm run start --workspace server"
+    "start": "npm run start --workspace server",
+    "extract:and-the-answer-isnt": "node scripts/extract-and-the-answer-isnt-from-epub.mjs",
+    "extract:im-terrible-at-dating": "node scripts/extract-im-terrible-at-dating-from-epub.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
