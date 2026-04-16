@@ -10,6 +10,7 @@ function TeamCard({ title, players, average, winningTeams, teamKey, revealIndexM
     })
     .map((player) => Number(player.guess));
   const revealedTotal = revealedGuesses.reduce((sum, value) => sum + value, 0);
+  const revealedDiff = revealedTotal - average;
   const allRevealed = players.every((player) => {
     const revealIndex = revealIndexMap[player.playerName];
     return typeof revealIndex === "number" && revealIndex < revealedCount;
@@ -30,8 +31,8 @@ function TeamCard({ title, players, average, winningTeams, teamKey, revealIndexM
       </ul>
       <div className="team-totals">
         <div className="team-total-box">
-          <span className="subtle">Team total</span>
-          <strong className="team-total-value">{allRevealed ? revealedTotal : "..."}</strong>
+          <span className="subtle">Team difference</span>
+          <strong className="team-total-value">{allRevealed ? revealedDiff : "..."}</strong>
         </div>
         <div className="team-total-box">
           <span className="subtle">Team average</span>
