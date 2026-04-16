@@ -102,10 +102,53 @@ p {
   gap: 1rem;
 }
 
-.dating-bc-row {
+.dating-year-inline {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
+}
+
+.dating-year-inline .dating-year-input {
+  flex: 1 1 10rem;
+  min-width: 7rem;
+  width: auto;
+}
+
+.dating-era-toggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  border: 2px solid #ffd84d;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dating-era-toggle button {
+  margin: 0;
+  border-radius: 0;
+  padding: 0.55rem 1.1rem;
+  min-width: 3.5rem;
+  background: rgba(17, 23, 24, 0.92);
+  color: var(--white);
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.dating-era-toggle button + button {
+  border-left: 2px solid #ffd84d;
+}
+
+.dating-era-toggle button.active {
+  background: var(--pacific-blue);
+  color: var(--white);
+}
+
+.dating-era-toggle button:not(.active) {
+  opacity: 0.88;
+}
+
+.dating-era-toggle button:disabled {
+  opacity: 0.45;
 }
 
 .field {

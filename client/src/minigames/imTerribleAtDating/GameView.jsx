@@ -85,37 +85,50 @@ export function ImTerribleAtDatingGameView({
           <h2>When did it happen?</h2>
           <p className="question">{round.question}</p>
           <p className="subtle">
-            Enter the calendar year (digits only).             Tick &quot;BC&quot; for dates before year 1 — the app sends that as a negative number (e.g. 551 BC
-            becomes <strong>-551</strong>).
+            Enter the calendar year (digits only). Use the <strong>AD / BC</strong> toggle for dates before year 1 —
+            BC is stored as a negative number (e.g. 551 BC → <strong>-551</strong>).
           </p>
         </div>
 
         {game.phase === GAME_PHASES.COLLECTING_FAKE_ANSWERS ? (
           <form className="panel stack" onSubmit={handleSubmit}>
             <h2>Your guess</h2>
-            <label className="subtle" htmlFor="dating-year">
-              Year (magnitude)
-            </label>
-            <input
-              id="dating-year"
-              type="text"
-              inputMode="numeric"
-              pattern="[0-9,]*"
-              autoComplete="off"
-              value={yearDigits}
-              onChange={(event) => setYearDigits(event.target.value.replace(/[^\d,]/g, ""))}
-              placeholder="e.g. 1865 or 66000000"
-              disabled={round.hasSubmittedGuess}
-            />
-            <label className="dating-bc-row">
+            <p className="subtle">Enter the year, then tap AD or BC (BC is sent as a negative number).</p>
+            <div className="dating-year-inline">
               <input
-                type="checkbox"
-                checked={isBC}
-                onChange={(event) => setIsBC(event.target.checked)}
+                id="dating-year"
+                className="dating-year-input"
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9,]*"
+                autoComplete="off"
+                aria-label="Year (digits only)"
+                value={yearDigits}
+                onChange={(event) => setYearDigits(event.target.value.replace(/[^\d,]/g, ""))}
+                placeholder="e.g. 1865"
                 disabled={round.hasSubmittedGuess}
               />
-              <span>This date is BC (before year 1)</span>
-            </label>
+              <div className="dating-era-toggle" role="group" aria-label="Era">
+                <button
+                  type="button"
+                  className={!isBC ? "active" : ""}
+                  aria-pressed={!isBC}
+                  disabled={round.hasSubmittedGuess}
+                  onClick={() => setIsBC(false)}
+                >
+                  AD
+                </button>
+                <button
+                  type="button"
+                  className={isBC ? "active" : ""}
+                  aria-pressed={isBC}
+                  disabled={round.hasSubmittedGuess}
+                  onClick={() => setIsBC(true)}
+                >
+                  BC
+                </button>
+              </div>
+            </div>
             {previewSigned !== null ? (
               <p className="subtle">
                 You will submit: <strong>{previewSigned}</strong> ({formatHistoricalYear(previewSigned)})
