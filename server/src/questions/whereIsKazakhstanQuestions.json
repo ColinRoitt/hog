@@ -1,0 +1,202 @@
+{
+  "continents": {
+    "NorthAmerica": [
+      {
+        "clue": "The longest national highway in the world (Trans-Canada Highway)",
+        "answerName": "Victoria, British Columbia (Trans-Canada Highway western terminus)",
+        "lat": 48.4284,
+        "lon": -123.3656
+      },
+      {
+        "clue": "The longest road in the United States (historic route)",
+        "answerName": "Chicago, Illinois (Historic Route 66 start)",
+        "lat": 41.8781,
+        "lon": -87.6298
+      },
+      {
+        "clue": "The tallest mountain in North America",
+        "answerName": "Denali (Mount McKinley), Alaska",
+        "lat": 63.0692,
+        "lon": -151.006
+      },
+      {
+        "clue": "The Grand Canyon (approximate visitor-center area)",
+        "answerName": "Grand Canyon Village, Arizona",
+        "lat": 36.0544,
+        "lon": -112.1401
+      },
+      {
+        "clue": "Niagara Falls (Canadian side viewpoint area)",
+        "answerName": "Niagara Falls, Ontario",
+        "lat": 43.0896,
+        "lon": -79.0849
+      }
+    ],
+    "SouthAmerica": [
+      {
+        "clue": "The longest mountain range on Earth",
+        "answerName": "Andes (Aconcagua), Argentina",
+        "lat": -32.6532,
+        "lon": -70.0109
+      },
+      {
+        "clue": "The largest rainforest on Earth",
+        "answerName": "Manaus, Brazil (Amazon Rainforest gateway)",
+        "lat": -3.119,
+        "lon": -60.0217
+      },
+      {
+        "clue": "The driest non-polar desert in the world",
+        "answerName": "San Pedro de Atacama, Chile (Atacama Desert)",
+        "lat": -22.9083,
+        "lon": -68.1997
+      },
+      {
+        "clue": "The southernmost city on the South American mainland (commonly cited)",
+        "answerName": "Ushuaia, Argentina",
+        "lat": -54.8019,
+        "lon": -68.303
+      },
+      {
+        "clue": "The largest river by discharge volume",
+        "answerName": "Belém, Brazil (Amazon River mouth region)",
+        "lat": -1.4558,
+        "lon": -48.5039
+      }
+    ],
+    "Europe": [
+      {
+        "clue": "Home of the artisan cheese “St Jude” (made near Bungay)",
+        "answerName": "Bungay, Suffolk, England (Fen Farm / St Jude cheese)",
+        "lat": 52.4533,
+        "lon": 1.4356
+      },
+      {
+        "clue": "The tallest mountain in Western Europe",
+        "answerName": "Mont Blanc (Chamonix area), France/Italy",
+        "lat": 45.8326,
+        "lon": 6.8652
+      },
+      {
+        "clue": "The longest river in Europe",
+        "answerName": "Volga River delta (near Astrakhan), Russia",
+        "lat": 46.3497,
+        "lon": 48.0408
+      },
+      {
+        "clue": "The smallest country in the world",
+        "answerName": "Vatican City",
+        "lat": 41.9029,
+        "lon": 12.4534
+      },
+      {
+        "clue": "The longest road tunnel in the world (as of common trivia lists)",
+        "answerName": "Lærdal Tunnel (approximate midpoint), Norway",
+        "lat": 60.9025,
+        "lon": 7.5631
+      },
+      {
+        "clue": "The ancient city preserved by a volcanic eruption in 79 CE",
+        "answerName": "Pompeii, Italy",
+        "lat": 40.7507,
+        "lon": 14.4869
+      }
+    ],
+    "Asia": [
+      {
+        "clue": "The tallest mountain on Earth",
+        "answerName": "Mount Everest (Nepal side base area)",
+        "lat": 27.9881,
+        "lon": 86.925
+      },
+      {
+        "clue": "The longest wall in the world",
+        "answerName": "Badaling Great Wall, China",
+        "lat": 40.3594,
+        "lon": 116.02
+      },
+      {
+        "clue": "The longest river in Asia",
+        "answerName": "Yangtze River (Three Gorges Dam), China",
+        "lat": 30.8231,
+        "lon": 111.0033
+      },
+      {
+        "clue": "The largest archipelago country by island count (common trivia)",
+        "answerName": "Jakarta, Indonesia",
+        "lat": -6.2088,
+        "lon": 106.8456
+      },
+      {
+        "clue": "The lowest land point on Earth",
+        "answerName": "Dead Sea (Israel/Jordan)",
+        "lat": 31.559,
+        "lon": 35.4732
+      }
+    ],
+    "MiddleEast": [
+      {
+        "clue": "The longest river in the world",
+        "answerName": "Cairo, Egypt (Nile River)",
+        "lat": 30.0444,
+        "lon": 31.2357
+      },
+      {
+        "clue": "The tallest building in the world (as of common trivia)",
+        "answerName": "Burj Khalifa, Dubai, UAE",
+        "lat": 25.1972,
+        "lon": 55.2744
+      },
+      {
+        "clue": "The lowest point on land (same sea, different framing)",
+        "answerName": "Dead Sea (Jordan side)",
+        "lat": 31.5,
+        "lon": 35.5
+      },
+      {
+        "clue": "The longest natural gas pipeline network hub (trivia-friendly proxy: major Gulf energy city)",
+        "answerName": "Doha, Qatar",
+        "lat": 25.2854,
+        "lon": 51.531
+      },
+      {
+        "clue": "The ancient city with the Hanging Gardens (commonly associated in trivia)",
+        "answerName": "Babylon (Hillah area), Iraq",
+        "lat": 32.4682,
+        "lon": 44.5502
+      }
+    ],
+    "Oceania": [
+      {
+        "clue": "The largest coral reef system in the world",
+        "answerName": "Great Barrier Reef (Cairns), Australia",
+        "lat": -16.9186,
+        "lon": 145.7781
+      },
+      {
+        "clue": "The tallest mountain in Oceania",
+        "answerName": "Mount Kosciuszko, Australia",
+        "lat": -36.4561,
+        "lon": 148.2635
+      },
+      {
+        "clue": "The longest road in New Zealand (State Highway 1, trivia framing)",
+        "answerName": "Wellington, New Zealand (SH1 North Island end)",
+        "lat": -41.2865,
+        "lon": 174.7762
+      },
+      {
+        "clue": "The largest city in New Zealand",
+        "answerName": "Auckland, New Zealand",
+        "lat": -36.8485,
+        "lon": 174.7633
+      },
+      {
+        "clue": "Uluru / Ayers Rock",
+        "answerName": "Uluru, Australia",
+        "lat": -25.3444,
+        "lon": 131.0369
+      }
+    ]
+  }
+}

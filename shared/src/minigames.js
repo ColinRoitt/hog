@@ -1,0 +1,21 @@
+import { GAME_TYPE } from "./events.js";
+
+export const MINIGAME_DEFINITIONS = [
+  {
+    type: GAME_TYPE.AND_THE_ANSWER_ISNT,
+    name: "And the Answer Isn't",
+    description: "One player guesses the real answer while everyone else submits bluffs.",
+  },
+  {
+    type: GAME_TYPE.DISTINCTLY_AVERAGE,
+    name: "Distinctly Average",
+    description: "Teams answer numerical questions. Closest team average wins the point.",
+  },
+  {
+    type: GAME_TYPE.WHERE_IS_KAZAKHSTAN,
+    name: "Where is Kazakhstan?",
+    description: "Drop a pin on the map. Closest guess wins the point (ties within 10% of best).",
+  },
+];
+
+export const DEFAULT_GAME_TYPE = MINIGAME_DEFINITIONS[0].type;

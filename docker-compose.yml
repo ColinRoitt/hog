@@ -1,0 +1,18 @@
+services:
+  hog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hog-app
+    restart: unless-stopped
+    expose:
+      - "3001"
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
