@@ -126,6 +126,7 @@ export default function App() {
         onSubmitTotesEmojiTitleGuess={(title) =>
           connectionRef.current?.submitTotesEmojiTitleGuess(title)
         }
+        onRerollTotesEmojiTitle={() => connectionRef.current?.rerollTotesEmojiTitle()}
         onReturnToLobby={() => connectionRef.current?.returnToLobby()}
       />
     </>

@@ -344,6 +344,29 @@ p {
   font-size: 1.05rem;
 }
 
+.totes-my-title-block {
+  margin-top: 1rem;
+}
+
+.totes-title-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: flex-start;
+}
+
+button.totes-reroll-button {
+  background: transparent;
+  border: 2px solid rgba(251, 234, 235, 0.55);
+  color: var(--white);
+}
+
+button.totes-reroll-button:not(:disabled):hover {
+  background: rgba(17, 178, 195, 0.15);
+  border-color: var(--pacific-blue);
+}
+
 .totes-emoji-display {
   margin-top: 1rem;
   padding: 1.25rem;

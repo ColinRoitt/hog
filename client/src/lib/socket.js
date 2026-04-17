@@ -122,6 +122,9 @@ export function connectToRoom({ playerName, roomName, sessionId, onRoomState, on
         }),
       );
     },
+    rerollTotesEmojiTitle() {
+      socket.send(JSON.stringify({ type: CLIENT_EVENTS.REROLL_TOTES_EMOJI_TITLE, payload: {} }));
+    },
     disconnect() {
       socket.close();
     },

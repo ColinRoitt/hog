@@ -62,6 +62,7 @@ export function TotesEmojiGameView({
   roomState,
   onSubmitTotesEmojiClue,
   onSubmitTotesEmojiTitleGuess,
+  onRerollTotesEmojiTitle,
   onNextRound,
   onReturnToLobby,
 }) {
@@ -75,10 +76,26 @@ export function TotesEmojiGameView({
     setEmojiClue((prev) => (prev + unicode).slice(0, 200));
   }, []);
 
+  const prevEntryTitleRef = useRef(null);
+
   useEffect(() => {
     setEmojiClue("");
     setTitleGuess("");
+    prevEntryTitleRef.current = null;
   }, [game.roundNumber]);
+
+  useEffect(() => {
+    if (game.phase !== GAME_PHASES.TOTES_EMOJI_ENTRY || !round?.myTitle || round.hasSubmittedEmoji) {
+      return;
+    }
+
+    const prev = prevEntryTitleRef.current;
+    if (prev && prev !== round.myTitle) {
+      setEmojiClue("");
+    }
+
+    prevEntryTitleRef.current = round.myTitle;
+  }, [game.phase, round?.myTitle, round?.hasSubmittedEmoji]);
 
   if (!round && game.phase === GAME_PHASES.FINISHED) {
     return (
@@ -141,10 +158,33 @@ export function TotesEmojiGameView({
                 Your item is shown only to you. Describe it using emoji only — no words or numbers.
               </p>
               {round.myTitle ? (
-                <p className="totes-my-title">
-                  <span className="subtle">Your {round.themeLabel.toLowerCase()}:</span>{" "}
-                  <strong>{round.myTitle}</strong>
-                </p>
+                <div className="totes-my-title-block">
+                  <p className="totes-my-title">
+                    <span className="subtle">Your {round.themeLabel.toLowerCase()}:</span>{" "}
+                    <strong>{round.myTitle}</strong>
+                  </p>
+                  <div className="totes-title-actions">
+                    <button
+                      type="button"
+                      className="totes-reroll-button"
+                      onClick={() => onRerollTotesEmojiTitle()}
+                      disabled={!round.canRerollTitle}
+                    >
+                      {round.hasUsedTitleReroll
+                        ? "Re-roll used"
+                        : round.hasSubmittedEmoji
+                          ? "Re-roll locked"
+                          : "Re-roll title (once)"}
+                    </button>
+                    {round.hasUsedTitleReroll ? (
+                      <p className="subtle">You already re-rolled this round.</p>
+                    ) : round.hasSubmittedEmoji ? (
+                      <p className="subtle">Re-roll is only available before you submit emoji.</p>
+                    ) : (
+                      <p className="subtle">Swap your title for another from this category once.</p>
+                    )}
+                  </div>
+                </div>
               ) : (
                 <p className="subtle">You are not in this round (reconnect and wait for the next one).</p>
               )}

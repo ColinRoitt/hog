@@ -152,9 +152,52 @@ function advanceRound(room, titleBank, onStateChange) {
     currentGuessIndex: 0,
     guessLog: [],
     titleOptions: [...pool].sort((a, b) => a.localeCompare(b)),
+    titleRerollsUsed: {},
   };
 
   onStateChange();
+}
+
+function rerollMyTitle(room, playerId, titleBank, onStateChange) {
+  const game = room.game;
+  if (!game || game.phase !== GAME_PHASES.TOTES_EMOJI_ENTRY) {
+    return { error: "You can only re-roll your title during the emoji clue phase." };
+  }
+
+  const round = game.currentRound;
+  if (!round.participantIds.includes(playerId)) {
+    return { error: "You are not in this round." };
+  }
+
+  if (round.emojis[playerId]) {
+    return { error: "You already submitted your emoji clue." };
+  }
+
+  if (round.titleRerollsUsed[playerId]) {
+    return { error: "You already used your re-roll for this round." };
+  }
+
+  const pool = titleBank[round.theme] || [];
+  const mine = round.assignments[playerId];
+  if (!mine) {
+    return { error: "You do not have a title to re-roll." };
+  }
+
+  const usedByOthers = new Set(
+    round.participantIds.filter((id) => id !== playerId).map((id) => round.assignments[id]),
+  );
+
+  const available = pool.filter((title) => !usedByOthers.has(title) && title !== mine);
+  if (!available.length) {
+    return { error: "No other title is available to switch to." };
+  }
+
+  const nextTitle = available[Math.floor(Math.random() * available.length)];
+  round.assignments[playerId] = nextTitle;
+  round.titleRerollsUsed[playerId] = true;
+
+  onStateChange();
+  return { ok: true };
 }
 
 function startGame(room, titleBank, onStateChange) {
@@ -306,6 +349,11 @@ function buildClientState(room, { playerId }) {
         ...base,
         myTitle: round.assignments[playerId] || null,
         hasSubmittedEmoji: Boolean(round.emojis[playerId]),
+        hasUsedTitleReroll: Boolean(round.titleRerollsUsed[playerId]),
+        canRerollTitle:
+          Boolean(round.assignments[playerId]) &&
+          !round.emojis[playerId] &&
+          !round.titleRerollsUsed[playerId],
       },
     };
   }
@@ -399,6 +447,10 @@ export function createTotesEmojiMinigame({ titlesByTheme }) {
 
       if (event.type === CLIENT_EVENTS.SUBMIT_TOTES_EMOJI_TITLE_GUESS) {
         return submitTitleGuess(room, event.playerId, event.payload, titlesByTheme, onStateChange);
+      }
+
+      if (event.type === CLIENT_EVENTS.REROLL_TOTES_EMOJI_TITLE) {
+        return rerollMyTitle(room, event.playerId, titlesByTheme, onStateChange);
       }
 
       if (event.type === CLIENT_EVENTS.NEXT_ROUND) {

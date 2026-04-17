@@ -12,6 +12,7 @@ export const CLIENT_EVENTS = {
   SUBMIT_GUESS: "submit_guess",
   SUBMIT_TOTES_EMOJI_CLUE: "submit_totes_emoji_clue",
   SUBMIT_TOTES_EMOJI_TITLE_GUESS: "submit_totes_emoji_title_guess",
+  REROLL_TOTES_EMOJI_TITLE: "reroll_totes_emoji_title",
 };
 
 export const SERVER_EVENTS = {
