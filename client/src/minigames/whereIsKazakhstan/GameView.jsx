@@ -210,6 +210,11 @@ export function WhereIsKazakhstanGameView({
         {game.phase === GAME_PHASES.MAP_SCORING ? (
           <div className="panel stack">
             <h2>Results</h2>
+            {round.answerName ? (
+              <p className="question">
+                Answer: <strong>{round.answerName}</strong>
+              </p>
+            ) : null}
             <p className="subtle">
               Winners:{" "}
               {(round.winners || [])
