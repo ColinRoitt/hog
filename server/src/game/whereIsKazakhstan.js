@@ -126,12 +126,17 @@ function normalizeContinentsBank(rawQuestions) {
       .map((location) => ({
         clue: String(location.clue || location.name || "").trim(),
         answerName: String(location.answerName || location.answer || "").trim(),
+        wikipediaUrl: String(location.wikipediaUrl || "").trim(),
         lat: Number(location.lat),
         lon: Number(location.lon),
       }))
       .filter(
         (location) =>
-          location.clue && location.answerName && Number.isFinite(location.lat) && Number.isFinite(location.lon),
+          location.clue &&
+          location.answerName &&
+          location.wikipediaUrl &&
+          Number.isFinite(location.lat) &&
+          Number.isFinite(location.lon),
       );
 
     if (normalizedLocations.length) {
@@ -244,6 +249,7 @@ function advanceRound(room, onStateChange) {
     prompts,
     clue: prompts[0].clue,
     answerName: prompts[0].answerName,
+    wikipediaUrl: prompts[0].wikipediaUrl,
     correctLat: Number(prompts[0].lat),
     correctLon: Number(prompts[0].lon),
     guesses: {},
@@ -274,6 +280,7 @@ function startNextPrompt(room, onStateChange) {
 
   round.clue = prompt.clue;
   round.answerName = prompt.answerName;
+  round.wikipediaUrl = prompt.wikipediaUrl;
   round.correctLat = Number(prompt.lat);
   round.correctLon = Number(prompt.lon);
   round.guesses = {};
@@ -356,6 +363,7 @@ function submitMapGuess(room, playerId, payload, onStateChange) {
     {
       type: "correct",
       locationName: game.currentRound.answerName,
+      wikipediaUrl: game.currentRound.wikipediaUrl,
       lat: correctLat,
       lon: correctLon,
     },
@@ -439,6 +447,7 @@ function buildClientState(room, { playerId }) {
           promptTotal: currentRound.promptTotal,
           clue: currentRound.clue,
           answerName: game.phase === GAME_PHASES.MAP_SCORING ? currentRound.answerName : null,
+          answerWikipediaUrl: game.phase === GAME_PHASES.MAP_SCORING ? currentRound.wikipediaUrl : null,
           hasSubmittedGuess: Boolean(currentRound.guesses[playerId]),
           submittedCount: Object.keys(currentRound.guesses).length,
           expectedCount: getConnectedPlayerIds(room).length,

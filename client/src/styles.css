@@ -306,6 +306,17 @@ p {
   color: var(--white);
 }
 
+.map-wikipedia-link {
+  color: #a7f0f8;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.map-wikipedia-link:hover {
+  color: var(--white);
+}
+
 .map-shell {
   margin-top: 1rem;
   border: 1px solid #ffd84d;

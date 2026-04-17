@@ -4,60 +4,70 @@
       {
         "clue": "The longest national highway in the world",
         "answerName": "Victoria, British Columbia (Trans-Canada Highway western terminus)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Victoria,_British_Columbia",
         "lat": 48.4284,
         "lon": -123.3656
       },
       {
         "clue": "The longest road in the United States Start",
         "answerName": "Chicago, Illinois (Historic Route 66 start)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/U.S._Route_66",
         "lat": 41.8781,
         "lon": -87.6298
       },
       {
         "clue": "The tallest mountain in North America",
         "answerName": "Denali (Mount McKinley), Alaska",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Denali",
         "lat": 63.0692,
         "lon": -151.006
       },
       {
         "clue": "The Grand Canyon (approximate visitor-center area)",
         "answerName": "Grand Canyon Village, Arizona",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Grand_Canyon_Village,_Arizona",
         "lat": 36.0544,
         "lon": -112.1401
       },
       {
         "clue": "Niagara Falls (Canadian side viewpoint area)",
         "answerName": "Niagara Falls, Ontario",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Niagara_Falls,_Ontario",
         "lat": 43.0896,
         "lon": -79.0849
       },
       {
         "clue": "The tallest structure in the Western Hemisphere",
         "answerName": "CN Tower, Toronto, Canada",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/CN_Tower",
         "lat": 43.6426,
         "lon": -79.3871
       },
       {
         "clue": "The largest pyramid in the Americas by volume",
         "answerName": "Great Pyramid of Cholula, Puebla, Mexico",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Cholula",
         "lat": 19.0558,
         "lon": -98.3023
       },
       {
         "clue": "The southern end of the Las Vegas Strip",
         "answerName": "Welcome to Fabulous Las Vegas sign, Nevada",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Welcome_to_Fabulous_Las_Vegas_sign",
         "lat": 36.082,
         "lon": -115.1728
       },
       {
         "clue": "The American city famous for the Golden Gate Bridge",
         "answerName": "San Francisco, California",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/San_Francisco",
         "lat": 37.8199,
         "lon": -122.4783
       },
       {
         "clue": "The ancient Maya city known for El Castillo",
         "answerName": "Chichen Itza, Yucatan, Mexico",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Chichen_Itza",
         "lat": 20.6843,
         "lon": -88.5678
       }
@@ -66,60 +76,70 @@
       {
         "clue": "The longest mountain range on Earth",
         "answerName": "Andes (Aconcagua), Argentina",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Aconcagua",
         "lat": -32.6532,
         "lon": -70.0109
       },
       {
         "clue": "The largest rainforest on Earth",
         "answerName": "Manaus, Brazil (Amazon Rainforest gateway)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Manaus",
         "lat": -3.119,
         "lon": -60.0217
       },
       {
         "clue": "The driest non-polar desert in the world",
         "answerName": "San Pedro de Atacama, Chile (Atacama Desert)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/San_Pedro_de_Atacama",
         "lat": -22.9083,
         "lon": -68.1997
       },
       {
         "clue": "The southernmost city on the South American mainland (commonly cited)",
         "answerName": "Ushuaia, Argentina",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Ushuaia",
         "lat": -54.8019,
         "lon": -68.303
       },
       {
         "clue": "The mouth of the largest river by discharge volume",
         "answerName": "Belem, Brazil (Amazon River mouth region)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Bel%C3%A9m",
         "lat": -1.4558,
         "lon": -48.5039
       },
       {
         "clue": "The famous Christ the Redeemer statue",
         "answerName": "Rio de Janeiro, Brazil",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Rio_de_Janeiro",
         "lat": -22.9519,
         "lon": -43.2105
       },
       {
         "clue": "The lost city of the Incas",
         "answerName": "Machu Picchu, Peru",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Machu_Picchu",
         "lat": -13.1631,
         "lon": -72.545
       },
       {
         "clue": "The world's highest capital city",
         "answerName": "La Paz, Bolivia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/La_Paz",
         "lat": -16.4897,
         "lon": -68.1193
       },
       {
         "clue": "The famous Angel Falls region",
         "answerName": "Canaima, Venezuela",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Canaima,_Venezuela",
         "lat": 6.2414,
         "lon": -62.8544
       },
       {
         "clue": "The giant moai statues",
         "answerName": "Easter Island (Hanga Roa), Chile",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Easter_Island",
         "lat": -27.1212,
         "lon": -109.3664
       }
@@ -127,67 +147,78 @@
     "Europe": [
       {
         "clue": "Home of the artisan cheese “St Jude”",
-        "answerName": "Bungay, Suffolk, England (Fen Farm / St Jude cheese)",
-        "lat": 52.4533,
-        "lon": 1.4356
+        "answerName": "Norfolk (near Lowestoft), England",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Lowestoft",
+        "lat": 52.49677564298528,
+        "lon": 1.6323261001821996
       },
       {
         "clue": "The tallest mountain in Western Europe",
         "answerName": "Mont Blanc (Chamonix area), France/Italy",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Mont_Blanc",
         "lat": 45.8326,
         "lon": 6.8652
       },
       {
         "clue": "The longest river in Europe",
         "answerName": "Volga River delta (near Astrakhan), Russia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Astrakhan",
         "lat": 46.3497,
         "lon": 48.0408
       },
       {
         "clue": "The smallest country in the world",
         "answerName": "Vatican City",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Vatican_City",
         "lat": 41.9029,
         "lon": 12.4534
       },
       {
         "clue": "The midpoint of the longest road tunnel in the world",
         "answerName": "Laerdal Tunnel (approximate midpoint), Norway",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/L%C3%A6rdal_Tunnel",
         "lat": 60.9025,
         "lon": 7.5631
       },
       {
         "clue": "The ancient city preserved by a volcanic eruption in 79 CE",
         "answerName": "Pompeii, Italy",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Pompeii",
         "lat": 40.7507,
         "lon": 14.4869
       },
       {
         "clue": "The Eiffel Tower",
         "answerName": "Paris, France",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Paris",
         "lat": 48.8584,
         "lon": 2.2945
       },
       {
         "clue": "The Acropolis overlooking Athens",
         "answerName": "Athens, Greece",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Athens",
         "lat": 37.9715,
         "lon": 23.7257
       },
       {
         "clue": "The ancient stone circle of Stonehenge",
         "answerName": "Stonehenge, Wiltshire, England",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Stonehenge",
         "lat": 51.1789,
         "lon": -1.8262
       },
       {
         "clue": "The westernmost capital city on mainland Europe",
         "answerName": "Lisbon, Portugal",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Lisbon",
         "lat": 38.7223,
         "lon": -9.1393
       },
       {
         "clue": "The city famous for canals and gondolas",
         "answerName": "Venice, Italy",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Venice",
         "lat": 45.4408,
         "lon": 12.3155
       }
@@ -196,60 +227,70 @@
       {
         "clue": "The tallest mountain on Earth",
         "answerName": "Mount Everest (Nepal side base area)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Mount_Everest",
         "lat": 27.9881,
         "lon": 86.925
       },
       {
         "clue": "The longest wall in the world",
         "answerName": "Badaling Great Wall, China",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Badaling",
         "lat": 40.3594,
         "lon": 116.02
       },
       {
         "clue": "The longest river in Asia",
         "answerName": "Yangtze River (Three Gorges Dam), China",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Three_Gorges_Dam",
         "lat": 30.8231,
         "lon": 111.0033
       },
       {
         "clue": "The largest archipelago country by island count (common trivia)",
         "answerName": "Jakarta, Indonesia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Jakarta",
         "lat": -6.2088,
         "lon": 106.8456
       },
       {
         "clue": "The lowest land point on Earth",
         "answerName": "Dead Sea (Israel/Jordan)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Dead_Sea",
         "lat": 31.559,
         "lon": 35.4732
       },
       {
         "clue": "The Taj Mahal",
         "answerName": "Agra, India",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Agra",
         "lat": 27.1751,
         "lon": 78.0421
       },
       {
         "clue": "The largest city in Japan",
         "answerName": "Tokyo, Japan",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Tokyo",
         "lat": 35.6762,
         "lon": 139.6503
       },
       {
         "clue": "The ancient city of Petra",
         "answerName": "Petra, Jordan",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Petra",
         "lat": 30.3285,
         "lon": 35.4444
       },
       {
         "clue": "The world's largest mangrove forest",
         "answerName": "Sundarbans (Khulna area), Bangladesh",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Sundarbans",
         "lat": 22.3152,
         "lon": 89.8153
       },
       {
         "clue": "The famous temple complex of Angkor Wat",
         "answerName": "Siem Reap, Cambodia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Siem_Reap",
         "lat": 13.4125,
         "lon": 103.867
       }
@@ -258,60 +299,70 @@
       {
         "clue": "The longest river in the world",
         "answerName": "Cairo, Egypt (Nile River)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Cairo",
         "lat": 30.0444,
         "lon": 31.2357
       },
       {
         "clue": "The tallest building in the world",
         "answerName": "Burj Khalifa, Dubai, UAE",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Burj_Khalifa",
         "lat": 25.1972,
         "lon": 55.2744
       },
       {
         "clue": "The lowest point on land",
         "answerName": "Dead Sea (Jordan side)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Dead_Sea",
         "lat": 31.5,
         "lon": 35.5
       },
       {
         "clue": "The longest natural gas pipeline network hub",
         "answerName": "Doha, Qatar",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Doha",
         "lat": 25.2854,
         "lon": 51.531
       },
       {
         "clue": "The ancient city with the Hanging Gardens",
         "answerName": "Babylon (Hillah area), Iraq",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Babylon",
         "lat": 32.4682,
         "lon": 44.5502
       },
       {
         "clue": "The holy city of Islam",
         "answerName": "Mecca, Saudi Arabia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Mecca",
         "lat": 21.3891,
         "lon": 39.8579
       },
       {
         "clue": "The rock-cut city of tombs in the desert",
         "answerName": "AlUla, Saudi Arabia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Al-'Ula",
         "lat": 26.6084,
         "lon": 37.9232
       },
       {
         "clue": "The capital city of Israel",
         "answerName": "Jerusalem",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Jerusalem",
         "lat": 31.7683,
         "lon": 35.2137
       },
       {
         "clue": "The Blue Mosque and Hagia Sophia city",
         "answerName": "Istanbul, Turkey",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Istanbul",
         "lat": 41.0082,
         "lon": 28.9784
       },
       {
         "clue": "The ancient city of Persepolis",
         "answerName": "Persepolis, Iran",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Persepolis",
         "lat": 29.935,
         "lon": 52.8916
       }
@@ -320,60 +371,70 @@
       {
         "clue": "The largest coral reef system in the world",
         "answerName": "Great Barrier Reef (Cairns), Australia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Great_Barrier_Reef",
         "lat": -16.9186,
         "lon": 145.7781
       },
       {
         "clue": "The tallest mountain in Oceania",
         "answerName": "Mount Kosciuszko, Australia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Mount_Kosciuszko",
         "lat": -36.4561,
         "lon": 148.2635
       },
       {
         "clue": "The northern end of the longest road in New Zealand",
         "answerName": "Wellington, New Zealand (SH1 North Island end)",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Wellington",
         "lat": -41.2865,
         "lon": 174.7762
       },
       {
         "clue": "The largest city in New Zealand",
         "answerName": "Auckland, New Zealand",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Auckland",
         "lat": -36.8485,
         "lon": 174.7633
       },
       {
         "clue": "Uluru / Ayers Rock",
         "answerName": "Uluru, Australia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Uluru",
         "lat": -25.3444,
         "lon": 131.0369
       },
       {
         "clue": "The famous white-sailed opera house",
         "answerName": "Sydney Opera House, Australia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Sydney_Opera_House",
         "lat": -33.8568,
         "lon": 151.2153
       },
       {
         "clue": "The capital city of New Zealand",
         "answerName": "Wellington, New Zealand",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Wellington",
         "lat": -41.2866,
         "lon": 174.7756
       },
       {
         "clue": "The tallest mountain in New Zealand",
         "answerName": "Aoraki / Mount Cook, New Zealand",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Aoraki_%2F_Mount_Cook",
         "lat": -43.595,
         "lon": 170.1418
       },
       {
         "clue": "The giant monolith in the centre of Australia",
         "answerName": "Kata Tjuta, Australia",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Kata_Tjuta",
         "lat": -25.2969,
         "lon": 130.7349
       },
       {
         "clue": "The capital of Fiji",
         "answerName": "Suva, Fiji",
+        "wikipediaUrl": "https://en.wikipedia.org/wiki/Suva",
         "lat": -18.1248,
         "lon": 178.4501
       }

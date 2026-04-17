@@ -213,6 +213,19 @@ export function WhereIsKazakhstanGameView({
             {round.answerName ? (
               <p className="question">
                 Answer: <strong>{round.answerName}</strong>
+                {round.answerWikipediaUrl ? (
+                  <>
+                    {" "}
+                    <a
+                      className="map-wikipedia-link"
+                      href={round.answerWikipediaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Wikipedia
+                    </a>
+                  </>
+                ) : null}
               </p>
             ) : null}
             <p className="subtle">
@@ -277,6 +290,19 @@ function RevealCopy({ round }) {
   return (
     <p className="subtle">
       Correct location for <strong>{step.locationName}</strong>.
+      {step.wikipediaUrl ? (
+        <>
+          {" "}
+          <a
+            className="map-wikipedia-link"
+            href={step.wikipediaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wikipedia
+          </a>
+        </>
+      ) : null}
     </p>
   );
 }
