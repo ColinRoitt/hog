@@ -2,13 +2,13 @@
   "continents": {
     "NorthAmerica": [
       {
-        "clue": "The longest national highway in the world (Trans-Canada Highway)",
+        "clue": "The longest national highway in the world",
         "answerName": "Victoria, British Columbia (Trans-Canada Highway western terminus)",
         "lat": 48.4284,
         "lon": -123.3656
       },
       {
-        "clue": "The longest road in the United States (historic route)",
+        "clue": "The longest road in the United States Start",
         "answerName": "Chicago, Illinois (Historic Route 66 start)",
         "lat": 41.8781,
         "lon": -87.6298
@@ -30,6 +30,36 @@
         "answerName": "Niagara Falls, Ontario",
         "lat": 43.0896,
         "lon": -79.0849
+      },
+      {
+        "clue": "The tallest structure in the Western Hemisphere",
+        "answerName": "CN Tower, Toronto, Canada",
+        "lat": 43.6426,
+        "lon": -79.3871
+      },
+      {
+        "clue": "The largest pyramid in the Americas by volume",
+        "answerName": "Great Pyramid of Cholula, Puebla, Mexico",
+        "lat": 19.0558,
+        "lon": -98.3023
+      },
+      {
+        "clue": "The southern end of the Las Vegas Strip",
+        "answerName": "Welcome to Fabulous Las Vegas sign, Nevada",
+        "lat": 36.082,
+        "lon": -115.1728
+      },
+      {
+        "clue": "The American city famous for the Golden Gate Bridge",
+        "answerName": "San Francisco, California",
+        "lat": 37.8199,
+        "lon": -122.4783
+      },
+      {
+        "clue": "The ancient Maya city known for El Castillo",
+        "answerName": "Chichen Itza, Yucatan, Mexico",
+        "lat": 20.6843,
+        "lon": -88.5678
       }
     ],
     "SouthAmerica": [
@@ -58,15 +88,45 @@
         "lon": -68.303
       },
       {
-        "clue": "The largest river by discharge volume",
-        "answerName": "Belém, Brazil (Amazon River mouth region)",
+        "clue": "The mouth of the largest river by discharge volume",
+        "answerName": "Belem, Brazil (Amazon River mouth region)",
         "lat": -1.4558,
         "lon": -48.5039
+      },
+      {
+        "clue": "The famous Christ the Redeemer statue",
+        "answerName": "Rio de Janeiro, Brazil",
+        "lat": -22.9519,
+        "lon": -43.2105
+      },
+      {
+        "clue": "The lost city of the Incas",
+        "answerName": "Machu Picchu, Peru",
+        "lat": -13.1631,
+        "lon": -72.545
+      },
+      {
+        "clue": "The world's highest capital city",
+        "answerName": "La Paz, Bolivia",
+        "lat": -16.4897,
+        "lon": -68.1193
+      },
+      {
+        "clue": "The famous Angel Falls region",
+        "answerName": "Canaima, Venezuela",
+        "lat": 6.2414,
+        "lon": -62.8544
+      },
+      {
+        "clue": "The giant moai statues",
+        "answerName": "Easter Island (Hanga Roa), Chile",
+        "lat": -27.1212,
+        "lon": -109.3664
       }
     ],
     "Europe": [
       {
-        "clue": "Home of the artisan cheese “St Jude” (made near Bungay)",
+        "clue": "Home of the artisan cheese “St Jude”",
         "answerName": "Bungay, Suffolk, England (Fen Farm / St Jude cheese)",
         "lat": 52.4533,
         "lon": 1.4356
@@ -90,8 +150,8 @@
         "lon": 12.4534
       },
       {
-        "clue": "The longest road tunnel in the world (as of common trivia lists)",
-        "answerName": "Lærdal Tunnel (approximate midpoint), Norway",
+        "clue": "The midpoint of the longest road tunnel in the world",
+        "answerName": "Laerdal Tunnel (approximate midpoint), Norway",
         "lat": 60.9025,
         "lon": 7.5631
       },
@@ -100,6 +160,36 @@
         "answerName": "Pompeii, Italy",
         "lat": 40.7507,
         "lon": 14.4869
+      },
+      {
+        "clue": "The Eiffel Tower",
+        "answerName": "Paris, France",
+        "lat": 48.8584,
+        "lon": 2.2945
+      },
+      {
+        "clue": "The Acropolis overlooking Athens",
+        "answerName": "Athens, Greece",
+        "lat": 37.9715,
+        "lon": 23.7257
+      },
+      {
+        "clue": "The ancient stone circle of Stonehenge",
+        "answerName": "Stonehenge, Wiltshire, England",
+        "lat": 51.1789,
+        "lon": -1.8262
+      },
+      {
+        "clue": "The westernmost capital city on mainland Europe",
+        "answerName": "Lisbon, Portugal",
+        "lat": 38.7223,
+        "lon": -9.1393
+      },
+      {
+        "clue": "The city famous for canals and gondolas",
+        "answerName": "Venice, Italy",
+        "lat": 45.4408,
+        "lon": 12.3155
       }
     ],
     "Asia": [
@@ -132,6 +222,36 @@
         "answerName": "Dead Sea (Israel/Jordan)",
         "lat": 31.559,
         "lon": 35.4732
+      },
+      {
+        "clue": "The Taj Mahal",
+        "answerName": "Agra, India",
+        "lat": 27.1751,
+        "lon": 78.0421
+      },
+      {
+        "clue": "The largest city in Japan",
+        "answerName": "Tokyo, Japan",
+        "lat": 35.6762,
+        "lon": 139.6503
+      },
+      {
+        "clue": "The ancient city of Petra",
+        "answerName": "Petra, Jordan",
+        "lat": 30.3285,
+        "lon": 35.4444
+      },
+      {
+        "clue": "The world's largest mangrove forest",
+        "answerName": "Sundarbans (Khulna area), Bangladesh",
+        "lat": 22.3152,
+        "lon": 89.8153
+      },
+      {
+        "clue": "The famous temple complex of Angkor Wat",
+        "answerName": "Siem Reap, Cambodia",
+        "lat": 13.4125,
+        "lon": 103.867
       }
     ],
     "MiddleEast": [
@@ -142,28 +262,58 @@
         "lon": 31.2357
       },
       {
-        "clue": "The tallest building in the world (as of common trivia)",
+        "clue": "The tallest building in the world",
         "answerName": "Burj Khalifa, Dubai, UAE",
         "lat": 25.1972,
         "lon": 55.2744
       },
       {
-        "clue": "The lowest point on land (same sea, different framing)",
+        "clue": "The lowest point on land",
         "answerName": "Dead Sea (Jordan side)",
         "lat": 31.5,
         "lon": 35.5
       },
       {
-        "clue": "The longest natural gas pipeline network hub (trivia-friendly proxy: major Gulf energy city)",
+        "clue": "The longest natural gas pipeline network hub",
         "answerName": "Doha, Qatar",
         "lat": 25.2854,
         "lon": 51.531
       },
       {
-        "clue": "The ancient city with the Hanging Gardens (commonly associated in trivia)",
+        "clue": "The ancient city with the Hanging Gardens",
         "answerName": "Babylon (Hillah area), Iraq",
         "lat": 32.4682,
         "lon": 44.5502
+      },
+      {
+        "clue": "The holy city of Islam",
+        "answerName": "Mecca, Saudi Arabia",
+        "lat": 21.3891,
+        "lon": 39.8579
+      },
+      {
+        "clue": "The rock-cut city of tombs in the desert",
+        "answerName": "AlUla, Saudi Arabia",
+        "lat": 26.6084,
+        "lon": 37.9232
+      },
+      {
+        "clue": "The capital city of Israel",
+        "answerName": "Jerusalem",
+        "lat": 31.7683,
+        "lon": 35.2137
+      },
+      {
+        "clue": "The Blue Mosque and Hagia Sophia city",
+        "answerName": "Istanbul, Turkey",
+        "lat": 41.0082,
+        "lon": 28.9784
+      },
+      {
+        "clue": "The ancient city of Persepolis",
+        "answerName": "Persepolis, Iran",
+        "lat": 29.935,
+        "lon": 52.8916
       }
     ],
     "Oceania": [
@@ -180,7 +330,7 @@
         "lon": 148.2635
       },
       {
-        "clue": "The longest road in New Zealand (State Highway 1, trivia framing)",
+        "clue": "The northern end of the longest road in New Zealand",
         "answerName": "Wellington, New Zealand (SH1 North Island end)",
         "lat": -41.2865,
         "lon": 174.7762
@@ -196,6 +346,36 @@
         "answerName": "Uluru, Australia",
         "lat": -25.3444,
         "lon": 131.0369
+      },
+      {
+        "clue": "The famous white-sailed opera house",
+        "answerName": "Sydney Opera House, Australia",
+        "lat": -33.8568,
+        "lon": 151.2153
+      },
+      {
+        "clue": "The capital city of New Zealand",
+        "answerName": "Wellington, New Zealand",
+        "lat": -41.2866,
+        "lon": 174.7756
+      },
+      {
+        "clue": "The tallest mountain in New Zealand",
+        "answerName": "Aoraki / Mount Cook, New Zealand",
+        "lat": -43.595,
+        "lon": 170.1418
+      },
+      {
+        "clue": "The giant monolith in the centre of Australia",
+        "answerName": "Kata Tjuta, Australia",
+        "lat": -25.2969,
+        "lon": 130.7349
+      },
+      {
+        "clue": "The capital of Fiji",
+        "answerName": "Suva, Fiji",
+        "lat": -18.1248,
+        "lon": 178.4501
       }
     ]
   }
