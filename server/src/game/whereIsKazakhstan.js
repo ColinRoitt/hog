@@ -1,6 +1,6 @@
 import { CLIENT_EVENTS, GAME_PHASES, GAME_TYPE } from "shared";
 
-const TIE_THRESHOLD = 0.1;
+const TIE_THRESHOLD = 0.15;
 const PROMPTS_PER_CONTINENT = 3;
 
 const CONTINENT_ORDER = [
