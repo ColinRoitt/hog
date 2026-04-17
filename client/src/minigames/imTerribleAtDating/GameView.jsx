@@ -38,7 +38,7 @@ export function ImTerribleAtDatingGameView({
   useEffect(() => {
     setYearDigits("");
     setIsBC(false);
-  }, [game.roundNumber, game.phase]);
+  }, [game.roundNumber]);
 
   if (!round && game.phase === GAME_PHASES.FINISHED) {
     return (
@@ -69,8 +69,6 @@ export function ImTerribleAtDatingGameView({
     }
 
     onSubmitImTerribleAtDatingGuess(signed);
-    setYearDigits("");
-    setIsBC(false);
   }
 
   const previewSigned = signedYearFromParts(yearDigits, isBC);

@@ -105,6 +105,10 @@ export function DistinctlyAverageGameView({
   );
 
   useEffect(() => {
+    setGuessInput("");
+  }, [game.roundNumber]);
+
+  useEffect(() => {
     if (game.phase !== GAME_PHASES.REVEAL) {
       setRevealedCount(0);
       return;
@@ -155,7 +159,6 @@ export function DistinctlyAverageGameView({
   function handleSubmit(event) {
     event.preventDefault();
     onSubmitDistinctlyAverageGuess(guessInput);
-    setGuessInput("");
   }
 
   return (

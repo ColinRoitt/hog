@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { GAME_PHASES } from "shared";
 
 function Scoreboard({ scoreboard, isHost, onReturnToLobby }) {
@@ -73,6 +73,10 @@ export function AndTheAnswerIsntGameView({
   const round = game.currentRound;
   const isHost = roomState.room.hostId === roomState.selfPlayerId;
 
+  useEffect(() => {
+    setFakeAnswer("");
+  }, [game.roundNumber]);
+
   const selectedOption = useMemo(
     () => round?.answerOptions?.find((option) => option.id === round.selectedOptionId),
     [round],
@@ -107,7 +111,6 @@ export function AndTheAnswerIsntGameView({
   function handleFakeAnswerSubmit(event) {
     event.preventDefault();
     onSubmitFakeAnswer(fakeAnswer);
-    setFakeAnswer("");
   }
 
   return (

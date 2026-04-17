@@ -54,6 +54,14 @@ input {
   color: var(--white);
 }
 
+input:disabled,
+textarea:disabled {
+  opacity: 1;
+  color: var(--white);
+  -webkit-text-fill-color: var(--white);
+  cursor: not-allowed;
+}
+
 select {
   width: 100%;
   border: 1px solid var(--lavender-blush);
