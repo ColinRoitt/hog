@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GAME_PHASES } from "shared";
+import { PendingSubmittersNote } from "../../components/PendingSubmittersNote.jsx";
 import "emoji-picker-element";
 
 function TotesEmojiPicker({ disabled, onEmojiPicked }) {
@@ -212,6 +213,7 @@ export function TotesEmojiGameView({
               </div>
               <p className="subtle">
                 Submitted {round.submittedEmojiCount} / {round.expectedEmojiCount}
+                <PendingSubmittersNote names={round.pendingSubmitNames} />
               </p>
               <button type="submit" disabled={!round.myTitle || round.hasSubmittedEmoji || !emojiClue.trim()}>
                 {round.hasSubmittedEmoji ? "Locked in" : "Submit emoji"}

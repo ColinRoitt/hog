@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CircleMarker, MapContainer, TileLayer, useMapEvents } from "react-leaflet";
 import { GAME_PHASES } from "shared";
+import { PendingSubmittersNote } from "../../components/PendingSubmittersNote.jsx";
 
 function Scoreboard({ scoreboard, isHost, onReturnToLobby }) {
   return (
@@ -190,6 +191,7 @@ export function WhereIsKazakhstanGameView({
             </button>
             <p className="subtle">
               {round.submittedCount} of {round.expectedCount} guesses in.
+              <PendingSubmittersNote names={round.pendingSubmitNames} />
             </p>
           </div>
         ) : null}

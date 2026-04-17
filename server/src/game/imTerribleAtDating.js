@@ -1,4 +1,5 @@
 import { CLIENT_EVENTS, GAME_PHASES, GAME_TYPE } from "shared";
+import { pendingSubmitNamesFromExpected } from "./submissionWaitHelpers.js";
 
 function pickQuestion(questions, usedQuestionIndexes) {
   const available = questions
@@ -156,7 +157,13 @@ function buildClientState(room, { playerId }) {
   const game = room.game;
   const currentRound = game.currentRound;
   const playersById = Object.fromEntries(room.players.map((player) => [player.id, player.name]));
-  const expectedCount = getConnectedPlayerIds(room).length;
+  const expectedPlayerIds = getConnectedPlayerIds(room);
+  const expectedCount = expectedPlayerIds.length;
+  const pendingSubmitNames = pendingSubmitNamesFromExpected(
+    room,
+    expectedPlayerIds,
+    (id) => Boolean(currentRound.guesses[id]),
+  );
 
   return {
     type: game.type,
@@ -169,6 +176,7 @@ function buildClientState(room, { playerId }) {
           hasSubmittedGuess: Boolean(currentRound.guesses[playerId]),
           submittedCount: Object.keys(currentRound.guesses).length,
           expectedCount,
+          pendingSubmitNames,
           correctAnswer: game.phase === GAME_PHASES.REVEAL ? currentRound.correctAnswer : null,
           revealRows:
             game.phase === GAME_PHASES.REVEAL && currentRound.revealRows

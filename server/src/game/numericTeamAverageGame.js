@@ -1,4 +1,5 @@
 import { CLIENT_EVENTS, GAME_PHASES } from "shared";
+import { pendingSubmitNamesFromExpected } from "./submissionWaitHelpers.js";
 
 function pickQuestion(questions, usedQuestionIndexes) {
   const available = questions
@@ -208,6 +209,14 @@ export function createNumericTeamAverageMinigame({
     const activeTeam = isPlayerOnTeamA ? "A" : isPlayerOnTeamB ? "B" : null;
     const currentRound = game.currentRound;
     const guessEntries = currentRound?.guesses || {};
+    const expectedGuessPlayerIds = currentRound
+      ? [...game.teams.teamA, ...game.teams.teamB]
+      : [];
+    const pendingSubmitNames = currentRound
+      ? pendingSubmitNamesFromExpected(room, expectedGuessPlayerIds, (id) =>
+          Object.prototype.hasOwnProperty.call(guessEntries, id),
+        )
+      : [];
 
     return {
       type: game.type,
@@ -223,6 +232,7 @@ export function createNumericTeamAverageMinigame({
             hasSubmittedGuess: Object.prototype.hasOwnProperty.call(guessEntries, playerId),
             submittedCount: Object.keys(guessEntries).length,
             expectedCount: game.teams.teamA.length + game.teams.teamB.length,
+            pendingSubmitNames,
             teamAGuesses:
               game.phase === GAME_PHASES.REVEAL
                 ? game.teams.teamA.map((id) => ({

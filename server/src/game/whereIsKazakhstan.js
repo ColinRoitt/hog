@@ -1,4 +1,5 @@
 import { CLIENT_EVENTS, GAME_PHASES, GAME_TYPE } from "shared";
+import { pendingSubmitNamesFromExpected } from "./submissionWaitHelpers.js";
 
 const TIE_THRESHOLD = 0.15;
 const PROMPTS_PER_CONTINENT = 3;
@@ -431,6 +432,12 @@ function advanceMapRound(room, playerId, onStateChange) {
 function buildClientState(room, { playerId }) {
   const game = room.game;
   const currentRound = game.currentRound;
+  const expectedPlayerIds = currentRound ? getConnectedPlayerIds(room) : [];
+  const pendingSubmitNames = currentRound
+    ? pendingSubmitNamesFromExpected(room, expectedPlayerIds, (id) =>
+        Boolean(currentRound.guesses[id]),
+      )
+    : [];
 
   return {
     type: game.type,
@@ -450,7 +457,8 @@ function buildClientState(room, { playerId }) {
           answerWikipediaUrl: game.phase === GAME_PHASES.MAP_SCORING ? currentRound.wikipediaUrl : null,
           hasSubmittedGuess: Boolean(currentRound.guesses[playerId]),
           submittedCount: Object.keys(currentRound.guesses).length,
-          expectedCount: getConnectedPlayerIds(room).length,
+          expectedCount: expectedPlayerIds.length,
+          pendingSubmitNames,
           revealSteps: currentRound.revealSteps,
           revealIndex: currentRound.revealIndex,
           winners: game.phase === GAME_PHASES.MAP_SCORING ? currentRound.winners : [],

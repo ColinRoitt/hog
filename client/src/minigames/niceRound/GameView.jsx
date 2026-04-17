@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { GAME_PHASES } from "shared";
+import { PendingSubmittersNote } from "../../components/PendingSubmittersNote.jsx";
 
 function Scoreboard({ scoreboard, isHost, onReturnToLobby }) {
   return (
@@ -121,6 +122,7 @@ export function NiceRoundGameView({
             <p className="subtle">
               {round.clueSubmittedCount} / {round.clueExpectedCount} clue-givers have submitted. Words stay
               hidden until everyone has locked in.
+              <PendingSubmittersNote names={round.pendingSubmitNames} />
             </p>
             {round.myLockedClue ? (
               <p className="subtle">

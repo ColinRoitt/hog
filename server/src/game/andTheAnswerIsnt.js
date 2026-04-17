@@ -1,4 +1,5 @@
 import { CLIENT_EVENTS, GAME_PHASES, GAME_TYPE } from "shared";
+import { pendingSubmitNamesFromExpected } from "./submissionWaitHelpers.js";
 
 const GUESSED_CORRECT_POINTS = 2;
 const SUCCESSFUL_BLUFF_POINTS = 1;
@@ -204,6 +205,14 @@ function buildClientState(room, { playerId }) {
   const currentRound = room.game?.currentRound;
   const guesserId = currentRound?.guesserId || null;
   const playerNamesById = Object.fromEntries(room.players.map((player) => [player.id, player.name]));
+  const expectedFakeSubmitterIds = currentRound
+    ? room.players.filter((player) => player.connected && player.id !== guesserId).map((player) => player.id)
+    : [];
+  const pendingSubmitNames = currentRound
+    ? pendingSubmitNamesFromExpected(room, expectedFakeSubmitterIds, (id) =>
+        Boolean(currentRound.fakeAnswers[id]),
+      )
+    : [];
 
   return {
     type: room.game.type,
@@ -234,6 +243,7 @@ function buildClientState(room, { playerId }) {
           fakeAnswersExpectedCount: room.players.filter(
             (player) => player.connected && player.id !== guesserId,
           ).length,
+          pendingSubmitNames,
           hasSubmittedFakeAnswer: Boolean(currentRound.fakeAnswers[playerId]),
           selectedOptionId: currentRound.selectedOptionId,
           guessedCorrectly: room.game.phase === GAME_PHASES.REVEAL ? currentRound.guessedCorrectly : null,

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { GAME_PHASES } from "shared";
+import { PendingSubmittersNote } from "../../components/PendingSubmittersNote.jsx";
 
 function TeamCard({ title, players, average, winningTeams, teamKey, revealIndexMap, revealedCount }) {
   const isWinner = winningTeams.includes(teamKey);
@@ -190,6 +191,7 @@ export function DistinctlyAverageGameView({
             </button>
             <p className="subtle">
               {round.submittedCount} of {round.expectedCount} guesses in.
+              <PendingSubmittersNote names={round.pendingSubmitNames} />
             </p>
           </form>
         ) : null}

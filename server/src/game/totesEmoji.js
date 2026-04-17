@@ -1,4 +1,5 @@
 import { CLIENT_EVENTS, GAME_PHASES, GAME_TYPE } from "shared";
+import { pendingSubmitNamesFromExpected } from "./submissionWaitHelpers.js";
 
 const THEMES = ["tv_show", "movie", "book"];
 
@@ -331,12 +332,17 @@ function buildClientState(room, { playerId }) {
     };
   }
 
+  const pendingSubmitNames = pendingSubmitNamesFromExpected(room, round.participantIds, (id) =>
+    Boolean(round.emojis[id]),
+  );
+
   const base = {
     themeLabel: round.themeLabel,
     participantIds: round.participantIds,
     submittedEmojiCount: Object.keys(round.emojis).length,
     expectedEmojiCount: round.participantIds.length,
     titleOptions: round.titleOptions,
+    pendingSubmitNames,
   };
 
   if (game.phase === GAME_PHASES.TOTES_EMOJI_ENTRY) {

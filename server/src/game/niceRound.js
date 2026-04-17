@@ -1,4 +1,5 @@
 import { CLIENT_EVENTS, GAME_PHASES, GAME_TYPE } from "shared";
+import { pendingSubmitNamesFromExpected } from "./submissionWaitHelpers.js";
 
 const THEMES = ["tv_show", "movie", "book"];
 
@@ -230,11 +231,18 @@ function advanceToNextRound(room, playerId, titleBank, onStateChange) {
   return { ok: true };
 }
 
-function buildClueClientSlice(round, game, playerId) {
+function buildClueClientSlice(room, round, game, playerId) {
   const expected = round.clueGiverOrder.length;
   const submitted = round.clues.length;
   const inGathering = game.phase === GAME_PHASES.NICE_ROUND_CLUES;
   const gatheringComplete = !inGathering || submitted >= expected;
+
+  const pendingSubmitNames =
+    inGathering && !gatheringComplete
+      ? pendingSubmitNamesFromExpected(room, round.clueGiverOrder, (id) =>
+          round.clues.some((entry) => entry.playerId === id),
+        )
+      : [];
 
   const orderedClues = round.clueGiverOrder
     .map((id) => round.clues.find((entry) => entry.playerId === id))
@@ -251,6 +259,7 @@ function buildClueClientSlice(round, game, playerId) {
     clueExpectedCount: expected,
     clueGatheringComplete: gatheringComplete,
     clues: gatheringComplete ? orderedClues : [],
+    pendingSubmitNames,
     myLockedClue: inGathering && !gatheringComplete && mine ? mine.word : null,
     canSubmitClue:
       inGathering &&
@@ -277,7 +286,7 @@ function buildClientState(room, { playerId }) {
   }
 
   const isGuesser = playerId === round.guesserId;
-  const clueSlice = buildClueClientSlice(round, game, playerId);
+  const clueSlice = buildClueClientSlice(room, round, game, playerId);
   const base = {
     themeLabel: round.themeLabel,
     guesserId: round.guesserId,

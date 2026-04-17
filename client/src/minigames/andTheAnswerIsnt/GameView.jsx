@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { GAME_PHASES } from "shared";
+import { PendingSubmittersNote } from "../../components/PendingSubmittersNote.jsx";
 
 function Scoreboard({ scoreboard, isHost, onReturnToLobby }) {
   return (
@@ -135,6 +136,7 @@ export function AndTheAnswerIsntGameView({
             </button>
             <p className="subtle">
               {round.fakeAnswersSubmittedCount} of {round.fakeAnswersExpectedCount} answers in.
+              <PendingSubmittersNote names={round.pendingSubmitNames} />
             </p>
           </form>
         ) : null}
@@ -145,6 +147,7 @@ export function AndTheAnswerIsntGameView({
             <p className="subtle">Waiting for everyone else to submit their fake answers.</p>
             <p className="subtle">
               {round.fakeAnswersSubmittedCount} of {round.fakeAnswersExpectedCount} answers in.
+              <PendingSubmittersNote names={round.pendingSubmitNames} />
             </p>
           </div>
         ) : null}
