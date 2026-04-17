@@ -457,7 +457,7 @@ export function createWhereIsKazakhstanMinigame({ questions }) {
     type: GAME_TYPE.WHERE_IS_KAZAKHSTAN,
     name: "Where is Kazakhstan?",
     description:
-      "One random continent per game, with 3 clue-style prompts in a row. Drop a pin on the map; closest guess wins the point (ties within 10% of best).",
+      "One random continent per game, with 3 clue-style prompts in a row. Drop a pin on the map; closest guess wins the point (ties within 15% of best).",
     start(room, { onStateChange }) {
       return startGame(room, questions, onStateChange);
     },

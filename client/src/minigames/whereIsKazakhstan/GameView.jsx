@@ -114,15 +114,23 @@ export function WhereIsKazakhstanGameView({
             className="map-frame"
             center={mapView.center}
             zoom={mapView.zoom}
-            minZoom={Math.max(2, mapView.zoom - 1)}
-            maxZoom={Math.min(8, mapView.zoom + 2)}
+            minZoom={mapView.zoom}
+            maxZoom={mapView.zoom}
             maxBounds={mapView.maxBounds}
             maxBoundsViscosity={1}
             worldCopyJump
+            scrollWheelZoom={false}
+            doubleClickZoom={false}
+            zoomControl={false}
+            touchZoom={false}
+            boxZoom={false}
+            keyboard={false}
+            dragging={true}
           >
             <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+              url="https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png"
+              subdomains="abcd"
             />
 
             <MapClickHandler

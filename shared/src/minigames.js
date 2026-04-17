@@ -20,7 +20,7 @@ export const MINIGAME_DEFINITIONS = [
   {
     type: GAME_TYPE.WHERE_IS_KAZAKHSTAN,
     name: "Where is Kazakhstan?",
-    description: "Drop a pin on the map. Closest guess wins the point (ties within 10% of best).",
+    description: "Drop a pin on the map. Closest guess wins the point (ties within 15% of best).",
   },
 ];
 
