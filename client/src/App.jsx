@@ -127,6 +127,11 @@ export default function App() {
           connectionRef.current?.submitTotesEmojiTitleGuess(title)
         }
         onRerollTotesEmojiTitle={() => connectionRef.current?.rerollTotesEmojiTitle()}
+        onSubmitNiceRoundClue={(word) => connectionRef.current?.submitNiceRoundClue(word)}
+        onSubmitNiceRoundTitleGuess={(title) => connectionRef.current?.submitNiceRoundTitleGuess(title)}
+        onSubmitNiceRoundBestClue={(pickedPlayerId) =>
+          connectionRef.current?.submitNiceRoundBestClue(pickedPlayerId)
+        }
         onReturnToLobby={() => connectionRef.current?.returnToLobby()}
       />
     </>

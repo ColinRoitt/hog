@@ -125,6 +125,30 @@ export function connectToRoom({ playerName, roomName, sessionId, onRoomState, on
     rerollTotesEmojiTitle() {
       socket.send(JSON.stringify({ type: CLIENT_EVENTS.REROLL_TOTES_EMOJI_TITLE, payload: {} }));
     },
+    submitNiceRoundClue(word) {
+      socket.send(
+        JSON.stringify({
+          type: CLIENT_EVENTS.SUBMIT_NICE_ROUND_CLUE,
+          payload: { word },
+        }),
+      );
+    },
+    submitNiceRoundTitleGuess(title) {
+      socket.send(
+        JSON.stringify({
+          type: CLIENT_EVENTS.SUBMIT_NICE_ROUND_TITLE_GUESS,
+          payload: { title },
+        }),
+      );
+    },
+    submitNiceRoundBestClue(pickedPlayerId) {
+      socket.send(
+        JSON.stringify({
+          type: CLIENT_EVENTS.SUBMIT_NICE_ROUND_BEST_CLUE,
+          payload: { pickedPlayerId },
+        }),
+      );
+    },
     disconnect() {
       socket.close();
     },

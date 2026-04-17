@@ -28,6 +28,12 @@ export const MINIGAME_DEFINITIONS = [
     description:
       "Describe a random TV show, movie, or book using only emoji, then guess what everyone else's emoji mean.",
   },
+  {
+    type: GAME_TYPE.NICE_ROUND,
+    name: "The Nice Round",
+    description:
+      "One player guesses a title while everyone else enters one-word clues at the same time. Guess right, then pick who had the best clue for bonus points.",
+  },
 ];
 
 export const DEFAULT_GAME_TYPE = MINIGAME_DEFINITIONS[0].type;

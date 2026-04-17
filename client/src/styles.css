@@ -317,6 +317,24 @@ p {
   color: var(--white);
 }
 
+.nice-round-category {
+  margin-top: 0.5rem;
+}
+
+.nice-best-clue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.nice-best-clue-list button {
+  width: 100%;
+  text-align: left;
+}
+
 .map-shell {
   margin-top: 1rem;
   border: 1px solid #ffd84d;

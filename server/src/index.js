@@ -9,6 +9,7 @@ import { createDistinctlyAverageMinigame } from "./game/distinctlyAverage.js";
 import { createImTerribleAtDatingMinigame } from "./game/imTerribleAtDating.js";
 import { createWhereIsKazakhstanMinigame } from "./game/whereIsKazakhstan.js";
 import { createTotesEmojiMinigame } from "./game/totesEmoji.js";
+import { createNiceRoundMinigame } from "./game/niceRound.js";
 import { createMinigameRegistry } from "./game/minigameRegistry.js";
 import { createRoomStore } from "./rooms/roomStore.js";
 import { createRoomGateway } from "./socket/roomGateway.js";
@@ -70,6 +71,7 @@ const minigameRegistry = createMinigameRegistry([
   createImTerribleAtDatingMinigame({ questions: imTerribleAtDatingQuestions }),
   createWhereIsKazakhstanMinigame({ questions: whereIsKazakhstanQuestions }),
   createTotesEmojiMinigame({ titlesByTheme: totesEmojiTitles }),
+  createNiceRoundMinigame({ titlesByTheme: totesEmojiTitles }),
 ]);
 const roomStore = createRoomStore({ minigameRegistry });
 
