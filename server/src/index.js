@@ -8,6 +8,7 @@ import { createAndTheAnswerIsntMinigame } from "./game/andTheAnswerIsnt.js";
 import { createDistinctlyAverageMinigame } from "./game/distinctlyAverage.js";
 import { createImTerribleAtDatingMinigame } from "./game/imTerribleAtDating.js";
 import { createWhereIsKazakhstanMinigame } from "./game/whereIsKazakhstan.js";
+import { createTotesEmojiMinigame } from "./game/totesEmoji.js";
 import { createMinigameRegistry } from "./game/minigameRegistry.js";
 import { createRoomStore } from "./rooms/roomStore.js";
 import { createRoomGateway } from "./socket/roomGateway.js";
@@ -38,6 +39,8 @@ const whereIsKazakhstanQuestionsPath = path.join(
   "whereIsKazakhstanQuestions.json",
 );
 const whereIsKazakhstanQuestions = JSON.parse(fs.readFileSync(whereIsKazakhstanQuestionsPath, "utf8"));
+const totesEmojiTitlesPath = path.join(__dirname, "questions", "totesEmojiTitles.json");
+const totesEmojiTitles = JSON.parse(fs.readFileSync(totesEmojiTitlesPath, "utf8"));
 
 const app = express();
 app.use(cors());
@@ -66,6 +69,7 @@ const minigameRegistry = createMinigameRegistry([
   createDistinctlyAverageMinigame({ questions: distinctlyAverageQuestions }),
   createImTerribleAtDatingMinigame({ questions: imTerribleAtDatingQuestions }),
   createWhereIsKazakhstanMinigame({ questions: whereIsKazakhstanQuestions }),
+  createTotesEmojiMinigame({ titlesByTheme: totesEmojiTitles }),
 ]);
 const roomStore = createRoomStore({ minigameRegistry });
 

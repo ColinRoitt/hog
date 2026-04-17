@@ -122,6 +122,10 @@ export default function App() {
         onNextMapRevealStep={() => connectionRef.current?.nextMapRevealStep()}
         onNextMapRound={() => connectionRef.current?.nextMapRound()}
         onNextRound={() => connectionRef.current?.nextRound()}
+        onSubmitTotesEmojiClue={(emoji) => connectionRef.current?.submitTotesEmojiClue(emoji)}
+        onSubmitTotesEmojiTitleGuess={(title) =>
+          connectionRef.current?.submitTotesEmojiTitleGuess(title)
+        }
         onReturnToLobby={() => connectionRef.current?.returnToLobby()}
       />
     </>

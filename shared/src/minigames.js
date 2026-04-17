@@ -22,6 +22,12 @@ export const MINIGAME_DEFINITIONS = [
     name: "Where is Kazakhstan?",
     description: "Drop a pin on the map. Closest guess wins the point (ties within 15% of best).",
   },
+  {
+    type: GAME_TYPE.TOTES_EMOJI,
+    name: "Totes Emoji",
+    description:
+      "Describe a random TV show, movie, or book using only emoji, then guess what everyone else's emoji mean.",
+  },
 ];
 
 export const DEFAULT_GAME_TYPE = MINIGAME_DEFINITIONS[0].type;

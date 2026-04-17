@@ -10,6 +10,8 @@ export const CLIENT_EVENTS = {
   SUBMIT_MAP_GUESS: "submit_map_guess",
   SUBMIT_FAKE_ANSWER: "submit_fake_answer",
   SUBMIT_GUESS: "submit_guess",
+  SUBMIT_TOTES_EMOJI_CLUE: "submit_totes_emoji_clue",
+  SUBMIT_TOTES_EMOJI_TITLE_GUESS: "submit_totes_emoji_title_guess",
 };
 
 export const SERVER_EVENTS = {
@@ -27,6 +29,8 @@ export const GAME_PHASES = {
   MAP_PLACING: "map_placing",
   MAP_REVEAL: "map_reveal",
   MAP_SCORING: "map_scoring",
+  TOTES_EMOJI_ENTRY: "totes_emoji_entry",
+  TOTES_EMOJI_GUESSING: "totes_emoji_guessing",
 };
 
 export const GAME_TYPE = {
@@ -34,4 +38,5 @@ export const GAME_TYPE = {
   DISTINCTLY_AVERAGE: "distinctly_average",
   IM_TERRIBLE_AT_DATING: "im_terrible_at_dating",
   WHERE_IS_KAZAKHSTAN: "where_is_kazakhstan",
+  TOTES_EMOJI: "totes_emoji",
 };

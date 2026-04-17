@@ -339,6 +339,73 @@ p {
   border: 1px solid var(--lavender-blush);
 }
 
+.totes-my-title {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.totes-emoji-display {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  font-size: clamp(2.25rem, 7vw, 3.75rem);
+  line-height: 1.35;
+  text-align: center;
+  word-break: break-word;
+  background: rgba(17, 23, 24, 0.65);
+  border-radius: 16px;
+  border: 1px solid rgba(251, 234, 235, 0.35);
+}
+
+.totes-last-guess {
+  border-width: 2px;
+}
+
+.totes-last-guess.correct {
+  border-color: #5fd4a4;
+  background: rgba(95, 212, 164, 0.12);
+}
+
+.totes-last-guess.wrong {
+  border-color: #ffd84d;
+  background: rgba(255, 216, 77, 0.1);
+}
+
+.totes-emoji-inline {
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.totes-emoji-picker-block {
+  margin-top: 0.5rem;
+}
+
+.totes-emoji-picker-wrap {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(251, 234, 235, 0.35);
+  background: rgba(17, 23, 24, 0.4);
+}
+
+.totes-emoji-picker-wrap--disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.totes-emoji-picker-wrap emoji-picker {
+  width: 100%;
+  height: min(320px, 45vh);
+  --border-radius: 16px;
+  --background: #141a1b;
+  --border-color: rgba(251, 234, 235, 0.25);
+  --input-font-color: #ffffff;
+  --input-border-color: rgba(251, 234, 235, 0.45);
+  --button-hover-background: #2a3436;
+  --button-active-background: #333e40;
+  --indicator-color: var(--pacific-blue);
+}
+
 @media (min-width: 960px) {
   .game-layout {
     grid-template-columns: minmax(0, 2fr) 320px;

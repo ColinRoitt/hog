@@ -106,6 +106,22 @@ export function connectToRoom({ playerName, roomName, sessionId, onRoomState, on
     nextRound() {
       socket.send(JSON.stringify({ type: CLIENT_EVENTS.NEXT_ROUND, payload: {} }));
     },
+    submitTotesEmojiClue(emoji) {
+      socket.send(
+        JSON.stringify({
+          type: CLIENT_EVENTS.SUBMIT_TOTES_EMOJI_CLUE,
+          payload: { emoji },
+        }),
+      );
+    },
+    submitTotesEmojiTitleGuess(title) {
+      socket.send(
+        JSON.stringify({
+          type: CLIENT_EVENTS.SUBMIT_TOTES_EMOJI_TITLE_GUESS,
+          payload: { title },
+        }),
+      );
+    },
     disconnect() {
       socket.close();
     },
