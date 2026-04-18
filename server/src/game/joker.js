@@ -1,6 +1,8 @@
 import { CLIENT_EVENTS, GAME_PHASES, GAME_TYPE } from "shared";
 import { pendingSubmitNamesFromExpected } from "./submissionWaitHelpers.js";
 
+const PUNCHLINE_REVEAL_DELAY_MS = 5000;
+
 function shuffle(items) {
   const copy = [...items];
   for (let index = copy.length - 1; index > 0; index -= 1) {
@@ -45,11 +47,50 @@ function getConnectedPlayerIds(room) {
   return room.players.filter((player) => player.connected).map((player) => player.id);
 }
 
+function clearRevealTimer(game) {
+  if (!game?.punchlineRevealTimer) {
+    return;
+  }
+
+  clearTimeout(game.punchlineRevealTimer);
+  game.punchlineRevealTimer = null;
+}
+
+function schedulePunchlineReveal(room, onStateChange) {
+  const game = room.game;
+  if (!game || game.phase !== GAME_PHASES.JOKER_REVEAL || !game.currentRound) {
+    return;
+  }
+
+  const expectedRoundNumber = game.roundNumber;
+  const expectedRevealIndex = game.currentRound.activeRevealIndex;
+  clearRevealTimer(game);
+  game.punchlineRevealTimer = setTimeout(() => {
+    const liveGame = room.game;
+    if (
+      !liveGame ||
+      liveGame.type !== GAME_TYPE.JOKER ||
+      liveGame.phase !== GAME_PHASES.JOKER_REVEAL ||
+      !liveGame.currentRound ||
+      liveGame.roundNumber !== expectedRoundNumber ||
+      liveGame.currentRound.activeRevealIndex !== expectedRevealIndex
+    ) {
+      return;
+    }
+
+    liveGame.currentRound.isActivePunchlineVisible = true;
+    liveGame.punchlineRevealTimer = null;
+    onStateChange();
+  }, PUNCHLINE_REVEAL_DELAY_MS);
+}
+
 function advanceRound(room, onStateChange) {
   const game = room.game;
   if (!game) {
     return;
   }
+
+  clearRevealTimer(game);
 
   const participantIds = getConnectedPlayerIds(room);
   if (participantIds.length < 2) {
@@ -84,6 +125,7 @@ function startGame(room, { onStateChange }) {
     phase: GAME_PHASES.LOBBY,
     roundNumber: 0,
     currentRound: null,
+    punchlineRevealTimer: null,
   };
 
   advanceRound(room, onStateChange);
@@ -185,7 +227,41 @@ function submitPunchline(room, playerId, payload, onStateChange) {
   });
 
   round.revealPairs = shuffle(pairs);
+  round.activeRevealIndex = -1;
+  round.isActivePunchlineVisible = false;
   game.phase = GAME_PHASES.JOKER_REVEAL;
+  clearRevealTimer(game);
+  onStateChange();
+  return { ok: true };
+}
+
+function revealNextSetup(room, playerId, onStateChange) {
+  const game = room.game;
+  if (!game || game.phase !== GAME_PHASES.JOKER_REVEAL) {
+    return { error: "The reveal is not active right now." };
+  }
+
+  if (room.hostId !== playerId) {
+    return { error: "Only the host can reveal the next joke." };
+  }
+
+  const round = game.currentRound;
+  if (!round?.revealPairs?.length) {
+    return { error: "There are no jokes to reveal." };
+  }
+
+  if (!round.isActivePunchlineVisible && round.activeRevealIndex >= 0) {
+    return { error: "Wait for the current punchline to reveal." };
+  }
+
+  const nextIndex = round.activeRevealIndex + 1;
+  if (nextIndex >= round.revealPairs.length) {
+    return { error: "All jokes are already revealed." };
+  }
+
+  round.activeRevealIndex = nextIndex;
+  round.isActivePunchlineVisible = false;
+  schedulePunchlineReveal(room, onStateChange);
   onStateChange();
   return { ok: true };
 }
@@ -200,6 +276,7 @@ function advanceToNextRound(room, playerId, onStateChange) {
     return { error: "Only the host can start the next round." };
   }
 
+  clearRevealTimer(game);
   advanceRound(room, onStateChange);
   return { ok: true };
 }
@@ -260,12 +337,24 @@ function buildClientState(room, { playerId }) {
   }
 
   if (game.phase === GAME_PHASES.JOKER_REVEAL) {
+    const activeRevealIndex = round.activeRevealIndex ?? -1;
+    const activePair = activeRevealIndex >= 0 ? round.revealPairs[activeRevealIndex] : null;
+    const hasMoreSetups = activeRevealIndex + 1 < round.revealPairs.length;
+    const isRevealComplete =
+      activeRevealIndex === round.revealPairs.length - 1 && round.isActivePunchlineVisible;
+
     return {
       type: game.type,
       phase: game.phase,
       roundNumber: game.roundNumber,
       currentRound: {
-        revealPairs: round.revealPairs,
+        activePair,
+        activeRevealIndex,
+        revealCount: round.revealPairs.length,
+        isActivePunchlineVisible: Boolean(round.isActivePunchlineVisible),
+        canAdvanceReveal:
+          activeRevealIndex < 0 || Boolean(round.isActivePunchlineVisible && hasMoreSetups),
+        isRevealComplete,
       },
     };
   }
@@ -300,6 +389,10 @@ export function createJokerMinigame() {
 
       if (event.type === CLIENT_EVENTS.NEXT_ROUND) {
         return advanceToNextRound(room, event.playerId, onStateChange);
+      }
+
+      if (event.type === CLIENT_EVENTS.NEXT_JOKER_REVEAL) {
+        return revealNextSetup(room, event.playerId, onStateChange);
       }
 
       return { error: "That action is not supported for this minigame." };

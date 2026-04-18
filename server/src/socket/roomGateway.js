@@ -130,7 +130,8 @@ export function createRoomGateway({ wss, roomStore, minigameRegistry }) {
         message.type === CLIENT_EVENTS.SUBMIT_NICE_ROUND_TITLE_GUESS ||
         message.type === CLIENT_EVENTS.SUBMIT_NICE_ROUND_BEST_CLUE ||
         message.type === CLIENT_EVENTS.SUBMIT_JOKER_SETUP ||
-        message.type === CLIENT_EVENTS.SUBMIT_JOKER_PUNCHLINE
+        message.type === CLIENT_EVENTS.SUBMIT_JOKER_PUNCHLINE ||
+        message.type === CLIENT_EVENTS.NEXT_JOKER_REVEAL
       ) {
         const result = minigameRegistry.handleEvent(
           room,

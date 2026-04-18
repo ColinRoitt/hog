@@ -18,6 +18,7 @@ export const CLIENT_EVENTS = {
   SUBMIT_NICE_ROUND_BEST_CLUE: "submit_nice_round_best_clue",
   SUBMIT_JOKER_SETUP: "submit_joker_setup",
   SUBMIT_JOKER_PUNCHLINE: "submit_joker_punchline",
+  NEXT_JOKER_REVEAL: "next_joker_reveal",
 };
 
 export const SERVER_EVENTS = {

@@ -6,6 +6,7 @@ export function JokerGameView({
   roomState,
   onSubmitJokerSetup,
   onSubmitJokerPunchline,
+  onNextJokerReveal,
   onNextRound,
   onReturnToLobby,
 }) {
@@ -125,20 +126,46 @@ export function JokerGameView({
         {game.phase === GAME_PHASES.JOKER_REVEAL ? (
           <div className="panel stack">
             <h2>Reveal</h2>
-            <p className="subtle">Each card: setup first, then the punchline someone wrote for it.</p>
-            <ul className="joker-reveal-list">
-              {(round.revealPairs || []).map((pair, index) => (
-                <li key={index} className="joker-reveal-card">
-                  <p className="eyebrow">Setup — {pair.setupAuthorName}</p>
-                  <p className="question">{pair.setupText}</p>
-                  <p className="eyebrow">Punchline — {pair.punchlineAuthorName}</p>
-                  <p className="subtle joker-punchline-line">{pair.punchlineText}</p>
-                </li>
-              ))}
-            </ul>
-            <button type="button" onClick={onNextRound} disabled={!isHost}>
-              {isHost ? "Next round" : "Waiting for host"}
-            </button>
+            <p className="subtle">
+              Host reveals setups one by one. Each punchline appears automatically after 5 seconds.
+            </p>
+            <p className="subtle">
+              {round.activeRevealIndex >= 0
+                ? `Joke ${round.activeRevealIndex + 1} of ${round.revealCount}`
+                : `Ready to reveal ${round.revealCount} jokes`}
+            </p>
+            {round.activePair ? (
+              <div className="joker-reveal-card">
+                <p className="eyebrow">Setup — {round.activePair.setupAuthorName}</p>
+                <p className="question">{round.activePair.setupText}</p>
+                {round.isActivePunchlineVisible ? (
+                  <>
+                    <p className="eyebrow">Punchline — {round.activePair.punchlineAuthorName}</p>
+                    <p className="subtle joker-punchline-line">{round.activePair.punchlineText}</p>
+                  </>
+                ) : (
+                  <p className="subtle">Punchline appears in 5 seconds…</p>
+                )}
+              </div>
+            ) : (
+              <p className="subtle">No setup revealed yet.</p>
+            )}
+
+            {round.isRevealComplete ? (
+              <button type="button" onClick={onNextRound} disabled={!isHost}>
+                {isHost ? "Next round" : "Waiting for host"}
+              </button>
+            ) : (
+              <button type="button" onClick={onNextJokerReveal} disabled={!isHost || !round.canAdvanceReveal}>
+                {isHost
+                  ? round.activeRevealIndex < 0
+                    ? "Reveal first setup"
+                    : round.canAdvanceReveal
+                      ? "Reveal next setup"
+                      : "Waiting for punchline..."
+                  : "Waiting for host"}
+              </button>
+            )}
           </div>
         ) : null}
 

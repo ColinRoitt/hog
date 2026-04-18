@@ -134,6 +134,7 @@ export default function App() {
         }
         onSubmitJokerSetup={(setup) => connectionRef.current?.submitJokerSetup(setup)}
         onSubmitJokerPunchline={(punchline) => connectionRef.current?.submitJokerPunchline(punchline)}
+        onNextJokerReveal={() => connectionRef.current?.nextJokerReveal()}
         onReturnToLobby={() => connectionRef.current?.returnToLobby()}
       />
     </>

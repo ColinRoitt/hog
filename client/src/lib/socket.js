@@ -165,6 +165,9 @@ export function connectToRoom({ playerName, roomName, sessionId, onRoomState, on
         }),
       );
     },
+    nextJokerReveal() {
+      socket.send(JSON.stringify({ type: CLIENT_EVENTS.NEXT_JOKER_REVEAL, payload: {} }));
+    },
     disconnect() {
       socket.close();
     },
