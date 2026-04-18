@@ -149,6 +149,22 @@ export function connectToRoom({ playerName, roomName, sessionId, onRoomState, on
         }),
       );
     },
+    submitJokerSetup(setup) {
+      socket.send(
+        JSON.stringify({
+          type: CLIENT_EVENTS.SUBMIT_JOKER_SETUP,
+          payload: { setup },
+        }),
+      );
+    },
+    submitJokerPunchline(punchline) {
+      socket.send(
+        JSON.stringify({
+          type: CLIENT_EVENTS.SUBMIT_JOKER_PUNCHLINE,
+          payload: { punchline },
+        }),
+      );
+    },
     disconnect() {
       socket.close();
     },

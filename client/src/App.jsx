@@ -132,6 +132,8 @@ export default function App() {
         onSubmitNiceRoundBestClue={(pickedPlayerId) =>
           connectionRef.current?.submitNiceRoundBestClue(pickedPlayerId)
         }
+        onSubmitJokerSetup={(setup) => connectionRef.current?.submitJokerSetup(setup)}
+        onSubmitJokerPunchline={(punchline) => connectionRef.current?.submitJokerPunchline(punchline)}
         onReturnToLobby={() => connectionRef.current?.returnToLobby()}
       />
     </>

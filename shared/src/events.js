@@ -16,6 +16,8 @@ export const CLIENT_EVENTS = {
   SUBMIT_NICE_ROUND_CLUE: "submit_nice_round_clue",
   SUBMIT_NICE_ROUND_TITLE_GUESS: "submit_nice_round_title_guess",
   SUBMIT_NICE_ROUND_BEST_CLUE: "submit_nice_round_best_clue",
+  SUBMIT_JOKER_SETUP: "submit_joker_setup",
+  SUBMIT_JOKER_PUNCHLINE: "submit_joker_punchline",
 };
 
 export const SERVER_EVENTS = {
@@ -38,6 +40,9 @@ export const GAME_PHASES = {
   NICE_ROUND_CLUES: "nice_round_clues",
   NICE_ROUND_GUESSING: "nice_round_guessing",
   NICE_ROUND_PICK_BEST: "nice_round_pick_best",
+  JOKER_SETUPS: "joker_setups",
+  JOKER_PUNCHLINES: "joker_punchlines",
+  JOKER_REVEAL: "joker_reveal",
 };
 
 export const GAME_TYPE = {
@@ -47,4 +52,5 @@ export const GAME_TYPE = {
   WHERE_IS_KAZAKHSTAN: "where_is_kazakhstan",
   TOTES_EMOJI: "totes_emoji",
   NICE_ROUND: "nice_round",
+  JOKER: "joker",
 };

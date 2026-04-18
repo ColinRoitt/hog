@@ -10,6 +10,7 @@ import { createImTerribleAtDatingMinigame } from "./game/imTerribleAtDating.js";
 import { createWhereIsKazakhstanMinigame } from "./game/whereIsKazakhstan.js";
 import { createTotesEmojiMinigame } from "./game/totesEmoji.js";
 import { createNiceRoundMinigame } from "./game/niceRound.js";
+import { createJokerMinigame } from "./game/joker.js";
 import { createMinigameRegistry } from "./game/minigameRegistry.js";
 import { createRoomStore } from "./rooms/roomStore.js";
 import { createRoomGateway } from "./socket/roomGateway.js";
@@ -72,6 +73,7 @@ const minigameRegistry = createMinigameRegistry([
   createWhereIsKazakhstanMinigame({ questions: whereIsKazakhstanQuestions }),
   createTotesEmojiMinigame({ titlesByTheme: totesEmojiTitles }),
   createNiceRoundMinigame({ titlesByTheme: totesEmojiTitles }),
+  createJokerMinigame(),
 ]);
 const roomStore = createRoomStore({ minigameRegistry });
 

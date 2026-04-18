@@ -10,6 +10,7 @@ export function createMinigameRegistry(minigames) {
       type: minigame.type,
       name: minigame.name,
       description: minigame.description,
+      lobbySection: minigame.lobbySection ?? "hog",
     }));
   }
 
